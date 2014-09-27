@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb528df8_99be1fcf",
+        "filename": "extract_elf_ramdisk/extract_elf_ramdisk.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000032
+      },
+      "writtenOn": "2014-09-27T20:44:28Z",
+      "side": 1,
+      "message": "Change the comment to say 16MB please. :p",
+      "revId": "33992e66356c9e0356704d05bdcf15eee486b8e2",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
