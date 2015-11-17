@@ -27,3 +27,9 @@ ifneq ($(filter kitakami kanuti yukon,$(SOMC_PLATFORM)),)
     TARGET_DTB_EXTRA_FLAGS := -2
 endif
 
+# Healthd
+HEALTHD_FORCE_BACKLIGHT_CONTROL := true
+HEALTHD_ENABLE_TRICOLOR_LED := true
+RED_LED_PATH := /sys/class/leds/led:rgb_red/brightness
+GREEN_LED_PATH := /sys/class/leds/led:rgb_green/brightness
+BLUE_LED_PATH := /sys/class/leds/led:rgb_blue/brightness
