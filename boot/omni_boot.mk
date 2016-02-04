@@ -17,7 +17,7 @@ BOARD_CUSTOM_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DT := true
 endif
 
-ifneq ($(filter yukon kitakami kanuti, $(SOMC_PLATFORM)), )
+ifneq ($(filter kitakami kanuti, $(SOMC_PLATFORM)), )
 TARGET_DTB_EXTRA_FLAGS := --force-v2
 endif
 
