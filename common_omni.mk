@@ -15,8 +15,8 @@
 # Include common
 include device/sony/common/common.mk
 
-# Inclode custom boot
-include device/sony/common/omni_boot.mk
+# Include custom boot
+include device/sony/common/boot/omni_boot.mk
 
 # dtbtool
 PRODUCT_PACKAGES += \
