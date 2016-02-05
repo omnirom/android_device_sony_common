@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Common config
-
 include device/sony/common/CommonConfig.mk
 
-
+# Sony AOSP Project
+SONY_AOSP ?= true
