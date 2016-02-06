@@ -17,3 +17,20 @@ include device/sony/common/CommonConfig.mk
 
 # Sony AOSP Project
 SONY_AOSP ?= true
+
+# Custom boot image
+ifneq ($(filter rhine shinano shinano2 yukon kitakami kanuti, $(PRODUCT_PLATFORM)), )
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_KERNEL_SEPARATED_DT := true
+endif
+
+ifneq ($(filter yukon kitakami kanuti, $(PRODUCT_PLATFORM)), )
+TARGET_DTB_EXTRA_FLAGS := --force-v2
+endif
+
+ifneq ($(filter rhine shinano shinano2 yukon, $(PRODUCT_PLATFORM)), )
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg_32.mk
+endif
+ifneq ($(filter kitakami kanuti, $(PRODUCT_PLATFORM)), )
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg_64.mk
+endif
