@@ -27,9 +27,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keycheck
 
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    telephony.lteOnGSMDevice=1
-
 # SELinux
 PRODUCT_PROPERTY_OVERRIDES += ro.build.selinux=1
