@@ -19,6 +19,7 @@ include device/sony/common/CommonConfig.mk
 SONY_AOSP ?= true
 
 # Custom boot image
+TARGET_KERNEL_SOURCE := kernel/sony/msm
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
