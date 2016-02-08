@@ -12,20 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include common
-include device/sony/common/common.mk
-
-# dtbtool
-PRODUCT_PACKAGES += \
-    dtbTool
-
-# Bootimg tools
-PRODUCT_PACKAGES += \
-    extract_elf_ramdisk
-
-# Recovery keycheck
-PRODUCT_PACKAGES += \
-    keycheck
-
-# SELinux
-PRODUCT_PROPERTY_OVERRIDES += ro.build.selinux=1
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    telephony.lteOnGSMDevice=1
