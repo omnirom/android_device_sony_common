@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98faad2e_5bf95ce3",
+        "filename": "twrp.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000799
+      },
+      "writtenOn": "2016-02-08T21:16:10Z",
+      "side": 1,
+      "message": "shouldn\u0027t be required",
+      "revId": "fc8f3a2a0daa34951441980e6e4e5fc85e2e4cbb",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
