@@ -14,6 +14,7 @@
 
 # Common config
 include device/sony/common/CommonConfig.mk
+include device/sony/common/twrp.mk
 
 # Sony AOSP Project
 SONY_AOSP ?= true
