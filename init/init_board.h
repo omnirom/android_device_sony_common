@@ -66,4 +66,15 @@
 #define KEYCHECK_TIMEOUT 3
 #endif
 
+// Constants: AOSP leds
+#ifndef SYSFS_PATH_LED_RED
+#define SYSFS_PATH_LED_RED   "/sys/class/leds/led:rgb_red/brightness"
+#endif
+#ifndef SYSFS_PATH_LED_GREEN
+#define SYSFS_PATH_LED_GREEN "/sys/class/leds/led:rgb_green/brightness"
+#endif
+#ifndef SYSFS_PATH_LED_BLUE
+#define SYSFS_PATH_LED_BLUE  "/sys/class/leds/led:rgb_blue/brightness"
+#endif
+
 #endif // __INIT_BOARD_H__

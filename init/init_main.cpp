@@ -63,6 +63,11 @@ int main(int argc, char** __attribute__((unused)) argv)
     mount("proc", "/proc", "proc", 0, NULL);
     mount("sysfs", "/sys", "sysfs", 0, NULL);
 
+    // Trigger amber LED
+    write_int(SYSFS_PATH_LED_RED, 255);
+    write_int(SYSFS_PATH_LED_GREEN, 0);
+    write_int(SYSFS_PATH_LED_BLUE, 255);
+
     // Additional board inits
     init_board.start_init();
 
@@ -97,6 +102,12 @@ int main(int argc, char** __attribute__((unused)) argv)
     {
         // Recovery boot
         write_string(BOOT_TXT, "RECOVERY BOOT", true);
+
+        // Orange led for recoveryboot
+        write_int(SYSFS_PATH_LED_RED, 255);
+        write_int(SYSFS_PATH_LED_GREEN, 100);
+        write_int(SYSFS_PATH_LED_BLUE, 0);
+
         init_board.introduce_recovery();
 
         // FOTA Recovery importation
@@ -127,6 +138,12 @@ int main(int argc, char** __attribute__((unused)) argv)
     {
         // Android boot
         write_string(BOOT_TXT, "ANDROID BOOT", true);
+
+        // Power off leds
+        write_int(SYSFS_PATH_LED_RED, 0);
+        write_int(SYSFS_PATH_LED_GREEN, 0);
+        write_int(SYSFS_PATH_LED_BLUE, 0);
+
         init_board.introduce_android();
 
         // Unpack Android ramdisk
