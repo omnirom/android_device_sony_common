@@ -19,10 +19,6 @@ include device/sony/common/common.mk
 PRODUCT_PACKAGES += \
     dtbTool
 
-# Bootimg tools
-PRODUCT_PACKAGES += \
-    extract_elf_ramdisk
-
 # Recovery keycheck
 PRODUCT_PACKAGES += \
     keycheck
