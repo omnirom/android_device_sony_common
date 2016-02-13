@@ -20,6 +20,17 @@
 #include "init_board_common.h"
 #include "init_prototypes.h"
 
+// Constants: AOSP Open Devices
+#ifndef SYSFS_PATH_LED_RED
+#define SYSFS_PATH_LED_RED   "/sys/class/leds/led:rgb_red/brightness"
+#endif
+#ifndef SYSFS_PATH_LED_GREEN
+#define SYSFS_PATH_LED_GREEN "/sys/class/leds/led:rgb_green/brightness"
+#endif
+#ifndef SYSFS_PATH_LED_BLUE
+#define SYSFS_PATH_LED_BLUE  "/sys/class/leds/led:rgb_blue/brightness"
+#endif
+
 // Class: init_board_device
 class init_board_device : public init_board_common
 {
