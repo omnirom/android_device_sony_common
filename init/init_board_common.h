@@ -39,19 +39,39 @@ protected:
 
 public:
     // Board: start init execution
-    virtual void start_init() { }
+    virtual void start_init()
+    {
+        // LED amber color
+        led_color(255, 0, 255);
+    }
 
     // Board: introduction for keycheck
     virtual void introduce_keycheck() { }
 
     // Board: introduction for Android
-    virtual void introduce_android() { }
+    virtual void introduce_android()
+    {
+        // LED boot selection colors
+        led_color(0, 0, 0);
+    }
 
     // Board: introduction for Recovery
-    virtual void introduce_recovery() { }
+    virtual void introduce_recovery()
+    {
+        // LED boot selection colors
+        led_color(255, 100, 0);
+    }
 
     // Board: finish init execution
     virtual void finish_init() { }
+
+    // Board: set led colors
+    void led_color(uint8_t r, uint8_t g, uint8_t b)
+    {
+        write_int("/sys/class/leds/led:rgb_red/brightness", r);
+        write_int("/sys/class/leds/led:rgb_green/brightness", g);
+        write_int("/sys/class/leds/led:rgb_blue/brightness", b);
+    }
 };
 
 #endif // __INIT_BOARD_COMMON_H__
