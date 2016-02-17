@@ -28,7 +28,7 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TARGET_NO_SEPARATE_RECOVERY := true
 
 # TWRP Crypto
-TW_INCLUDE_L_CRYPTO := true
+TW_INCLUDE_CRYPTO := true
 TW_CRYPTO_FS_TYPE := "ext4"
 TW_CRYPTO_MNT_POINT := "/data"
 TW_CRYPTO_REAL_BLKDEV := "/dev/block/bootdevice/by-name/userdata"
