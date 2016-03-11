@@ -15,12 +15,9 @@
 # Include common
 include device/sony/common/common.mk
 
-# dtbtool
+# init_sony tools
 PRODUCT_PACKAGES += \
-    dtbTool
-
-# Recovery keycheck
-PRODUCT_PACKAGES += \
+    init_sony \
     keycheck
 
 # SELinux
