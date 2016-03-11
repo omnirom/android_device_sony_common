@@ -21,13 +21,6 @@ SONY_AOSP ?= true
 
 # Custom boot image
 TARGET_KERNEL_SOURCE := kernel/sony/msm
-BOARD_CUSTOM_BOOTIMG := true
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
-TARGET_DTB_EXTRA_FLAGS := --force-v2
-ifneq ($(filter kitakami kanuti yukon,$(SOMC_PLATFORM)),)
-    TARGET_DTB_EXTRA_FLAGS := -2
-endif
 
 # Healthd
 HEALTHD_FORCE_BACKLIGHT_CONTROL := true
