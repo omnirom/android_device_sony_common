@@ -21,6 +21,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery keycheck
 PRODUCT_PACKAGES += \
+    init_sony \
     keycheck
 
 # SELinux
