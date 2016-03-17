@@ -167,9 +167,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.debug.multi_window=true
 
+ifeq ($(TARGET_INIT_VENDOR_LIB),)
 # Default to LTE/GSM/WCDMA.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9
+endif
 
 # System props for the data modules
 PRODUCT_PROPERTY_OVERRIDES += \
