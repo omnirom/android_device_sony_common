@@ -26,12 +26,14 @@ LOCAL_SRC_FILES := \
     ../extract_ramdisk/extract_ramdisk.cpp
 
 LOCAL_C_INCLUDES := \
-    ../extract_ramdisk
+    ../extract_ramdisk \
+    system/core/init
 
 LOCAL_CPPFLAGS := \
     -Wall \
     -Wextra \
-    -Werror
+    -Werror \
+    -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
 
 LOCAL_MODULE := init_sony
 LOCAL_MODULE_TAGS := optional
