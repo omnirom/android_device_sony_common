@@ -117,7 +117,7 @@ int main(int argc, char** __attribute__((unused)) argv)
         // Recovery ramdisk
         if (file_exists(SBIN_CPIO_RECOVERY))
         {
-            const char* argv_ramdiskcpio[] = { EXEC_BUSYBOX, "cpio", "-i", "-F",
+            const char* argv_ramdiskcpio[] = { EXEC_TOYBOX, "cpio", "-i", "-F",
                     SBIN_CPIO_RECOVERY, nullptr };
             system_exec(argv_ramdiskcpio);
         }
@@ -132,7 +132,7 @@ int main(int argc, char** __attribute__((unused)) argv)
         // Unpack Android ramdisk
         if (file_exists(SBIN_CPIO_ANDROID))
         {
-            const char* argv_ramdiskcpio[] = { EXEC_BUSYBOX, "cpio", "-i", "-F",
+            const char* argv_ramdiskcpio[] = { EXEC_TOYBOX, "cpio", "-i", "-F",
                     SBIN_CPIO_ANDROID, nullptr };
             system_exec(argv_ramdiskcpio);
         }
