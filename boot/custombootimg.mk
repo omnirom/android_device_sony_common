@@ -30,7 +30,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): \
     $(recovery_uncompressed_ramdisk) \
     $(INSTALLED_RAMDISK_TARGET) \
     $(INIT_SONY) \
-    $(PRODUCT_OUT)/utilities/busybox \
+    $(PRODUCT_OUT)/utilities/toybox \
     $(PRODUCT_OUT)/utilities/keycheck \
     $(MKBOOTIMG) $(MINIGZIP) \
     $(INTERNAL_BOOTIMAGE_FILES) \
@@ -43,7 +43,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): \
 	$(hide) cp $(uncompressed_ramdisk) $(PRODUCT_OUT)/combinedroot/sbin/
 	$(hide) cp -n $(uncompressed_ramdisk) $(recovery_uncompressed_ramdisk)
 	$(hide) cp $(recovery_uncompressed_ramdisk) $(PRODUCT_OUT)/combinedroot/sbin/
-	$(hide) cp $(PRODUCT_OUT)/utilities/busybox $(PRODUCT_OUT)/combinedroot/sbin/
+	$(hide) cp $(PRODUCT_OUT)/utilities/toybox $(PRODUCT_OUT)/combinedroot/sbin/
 	$(hide) cp $(PRODUCT_OUT)/utilities/keycheck $(PRODUCT_OUT)/combinedroot/sbin/
 
 	$(hide) cp $(INIT_SONY) $(PRODUCT_OUT)/combinedroot/sbin/init_sony
