@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98faad2e_0617ec49",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000799
+      },
+      "writtenOn": "2016-03-20T19:44:34Z",
+      "side": 1,
+      "message": "Nitpick: Either say \"don\u0027t\" or \"do not\" :P",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "56802da7c3bcdb58bde2068127cfead257d43e8c",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
