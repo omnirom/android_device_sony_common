@@ -1,3 +1,8 @@
+#
+# This makefile is not compatible with Yukon devices.
+#
+ifneq ($(filter-out yukon,$(SOMC_PLATFORM)),)
+
 LOCAL_PATH := $(call my-dir)
 
 uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
@@ -5,24 +10,6 @@ $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	zcat $< > $@
 
 INIT_SONY := $(PRODUCT_OUT)/utilities/init_sony
-
-INSTALLED_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img
-
-DTBTOOL := $(HOST_OUT_EXECUTABLES)/dtbToolCM$(HOST_EXECUTABLE_SUFFIX)
-$(INSTALLED_DTIMAGE_TARGET): \
-    $(DTBTOOL) \
-    $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr \
-    $(INSTALLED_KERNEL_TARGET)
-
-	@echo -e ${CL_CYN}"----- Making DT image ------"${CL_RST}
-	$(call pretty,"Target DT image: $@")
-	$(hide) $(DTBTOOL) $(TARGET_DTB_EXTRA_FLAGS) \
-        -o $(INSTALLED_DTIMAGE_TARGET) \
-        -s $(BOARD_KERNEL_PAGESIZE) \
-        -p $(KERNEL_OUT)/scripts/dtc/ \
-        $(KERNEL_OUT)/arch/$(TARGET_ARCH)/boot/dts/
-
-	@echo -e ${CL_CYN}"Made DT image: $@"${CL_RST}
 
 $(INSTALLED_BOOTIMAGE_TARGET): \
     $(PRODUCT_OUT)/kernel \
@@ -33,8 +20,7 @@ $(INSTALLED_BOOTIMAGE_TARGET): \
     $(PRODUCT_OUT)/utilities/toybox \
     $(PRODUCT_OUT)/utilities/keycheck \
     $(MKBOOTIMG) $(MINIGZIP) \
-    $(INTERNAL_BOOTIMAGE_FILES) \
-    $(INSTALLED_DTIMAGE_TARGET)
+    $(INTERNAL_BOOTIMAGE_FILES)
 
 	@echo -e ${CL_CYN}"----- Making boot image ------"${CL_RST}
 	$(hide) rm -fr $(PRODUCT_OUT)/combinedroot
@@ -59,12 +45,11 @@ $(INSTALLED_BOOTIMAGE_TARGET): \
         --cmdline "$(BOARD_KERNEL_CMDLINE)" \
         --base $(BOARD_KERNEL_BASE) \
         --pagesize $(BOARD_KERNEL_PAGESIZE) \
-        --dt $(INSTALLED_DTIMAGE_TARGET) $(BOARD_MKBOOTIMG_ARGS) \
         -o $(INSTALLED_BOOTIMAGE_TARGET)
 	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
 
 INSTALLED_RECOVERYIMAGE_TARGET := $(PRODUCT_OUT)/recovery.img
-$(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(recovery_ramdisk) $(recovery_kernel) $(INSTALLED_DTIMAGE_TARGET)
+$(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(recovery_ramdisk) $(recovery_kernel)
 	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
 	$(hide) $(MKBOOTIMG) \
         --kernel $(PRODUCT_OUT)/kernel \
@@ -72,6 +57,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(recovery_ramdisk) $(recovery_k
         --cmdline "$(BOARD_KERNEL_CMDLINE)" \
         --base $(BOARD_KERNEL_BASE) \
         --pagesize $(BOARD_KERNEL_PAGESIZE) \
-        --dt $(INSTALLED_DTIMAGE_TARGET) $(BOARD_MKBOOTIMG_ARGS) \
         -o $(INSTALLED_RECOVERYIMAGE_TARGET)
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
+
+endif

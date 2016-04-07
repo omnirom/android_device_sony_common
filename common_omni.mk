@@ -15,13 +15,10 @@
 # Include common
 include device/sony/common/common.mk
 
-# dtbtool
-PRODUCT_PACKAGES += \
-    dtbTool
-
 # Recovery keycheck
 PRODUCT_PACKAGES += \
     keycheck
 
 # SELinux
-PRODUCT_PROPERTY_OVERRIDES += ro.build.selinux=1
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
