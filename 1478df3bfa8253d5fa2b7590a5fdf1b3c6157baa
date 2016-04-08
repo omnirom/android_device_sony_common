@@ -117,6 +117,30 @@
       "revId": "1478df3bfa8253d5fa2b7590a5fdf1b3c6157baa",
       "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98faad2e_96ea0ba9",
+        "filename": "common_omni.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2016-04-08T22:52:41Z",
+      "side": 1,
+      "message": "Ok, just check the Product_packages above (keycheck) and also check the removed one (dtbTool)... there is some particular thing?. I think we can improve our time by talking about funcionality and not just about code style. Sorry But I can\u0027t see any important thing to discuss about it.",
+      "parentUuid": "98faad2e_d6e093cc",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 22
+      },
+      "revId": "1478df3bfa8253d5fa2b7590a5fdf1b3c6157baa",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
     }
   ]
 }
