@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "98faad2e_16795b27",
+        "filename": "CommonConfigOmni.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2016-04-08T20:48:58Z",
+      "side": 1,
+      "message": "Yeah, maybe. It needs Yukon confirmation.",
+      "parentUuid": "98faad2e_76e9bfe3",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 45
+      },
+      "revId": "1478df3bfa8253d5fa2b7590a5fdf1b3c6157baa",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98faad2e_56e6c314",
         "filename": "common_omni.mk",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-08T16:01:42Z",
       "side": 1,
       "message": "Unrelated, and not required either - this is just one line of 48 characters, splitting it up doesn\u0027t make sense here.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 22
+      },
+      "revId": "1478df3bfa8253d5fa2b7590a5fdf1b3c6157baa",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98faad2e_f6894f25",
+        "filename": "common_omni.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2016-04-08T20:48:58Z",
+      "side": 1,
+      "message": "Yeah, sorry but it makes sense if the code style is preserved and it improves human readability.",
+      "parentUuid": "98faad2e_56e6c314",
       "range": {
         "startLine": 23,
         "startChar": 0,
