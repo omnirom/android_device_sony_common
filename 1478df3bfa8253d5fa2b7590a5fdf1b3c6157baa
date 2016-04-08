@@ -93,6 +93,30 @@
       "revId": "1478df3bfa8253d5fa2b7590a5fdf1b3c6157baa",
       "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98faad2e_d6e093cc",
+        "filename": "common_omni.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000799
+      },
+      "writtenOn": "2016-04-08T22:36:11Z",
+      "side": 1,
+      "message": "I disageee - unless there is another prop related to SELinux, this shouldn\u0027t be done (and if it is REALLY necessary, it belongs in a separate commit)",
+      "parentUuid": "98faad2e_f6894f25",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 22
+      },
+      "revId": "1478df3bfa8253d5fa2b7590a5fdf1b3c6157baa",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
     }
   ]
 }
