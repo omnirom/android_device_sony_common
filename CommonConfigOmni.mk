@@ -26,6 +26,9 @@ TARGET_KERNEL_SOURCE := kernel/sony/msm
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
 
+# DSP Manager
+TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
+
 # Healthd
 HEALTHD_FORCE_BACKLIGHT_CONTROL := true
 HEALTHD_ENABLE_TRICOLOR_LED := true
