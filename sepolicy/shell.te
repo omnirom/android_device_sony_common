@@ -1,0 +1,3 @@
+# allow shell to look through /proc/ for ps, top
+allow shell domain:dir { search open read getattr };
+allow shell domain:{ file lnk_file } { open read getattr };
