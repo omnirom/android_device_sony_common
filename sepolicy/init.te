@@ -1,6 +1,6 @@
 allow init audio_device:chr_file { write ioctl };
-allow init app_data_file:dir { search getattr };
-allow init app_data_file:file { read getattr open };
+allow init app_data_file:dir { search getattr read open relabelfrom };
+allow init app_data_file:file { read getattr open relabelfrom };
 allow init fuse:dir write;
 allow init kernel:security read_policy;
 allow init kernel:file { write };
