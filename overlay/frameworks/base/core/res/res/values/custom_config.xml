@@ -33,9 +33,7 @@
         <item>airplane</item>
         <item>screenshot</item>
         <item>screenrecord</item>
-        <item>users</item>
         <item>silent</item>
-        <item>dnd</item>
     </string-array>
 
     <!-- Ambient Display -->
