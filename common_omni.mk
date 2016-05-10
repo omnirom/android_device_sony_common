@@ -15,6 +15,10 @@
 # Include common
 include device/sony/common/common.mk
 
+# Snapdragon Camera
+PRODUCT_PACKAGES += \
+    SnapdragonCamera
+
 # Recovery keycheck
 PRODUCT_PACKAGES += \
     keycheck
