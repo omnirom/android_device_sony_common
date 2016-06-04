@@ -15,7 +15,6 @@
 # TWRP UI
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_NO_SCREEN_BLANK := true
-TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
