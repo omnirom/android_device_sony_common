@@ -74,6 +74,4 @@ include device/sony/common-headers/KernelHeaders.mk
 -include vendor/qcom/proprietary/common/build/proprietary-build.mk
 
 # SELinux
-include device/qcom/aosp-sepolicy/sepolicy.mk
-
-BOARD_SEPOLICY_DIRS += device/sony/common/sepolicy
+include device/sony/sepolicy/sepolicy.mk
