@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+GAPPS_VARIANT := full
+
 # Include common
 include device/sony/common/common.mk
 
@@ -26,3 +29,6 @@ PRODUCT_PACKAGES += \
 # SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
+
+
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
