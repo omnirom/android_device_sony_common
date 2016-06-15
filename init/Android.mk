@@ -49,3 +49,27 @@ LOCAL_STATIC_LIBRARIES := \
 LOCAL_CLANG := true
 
 include $(BUILD_EXECUTABLE)
+
+include $(CLEAR_VARS)
+
+LOCAL_C_INCLUDES := system/core/init
+
+LOCAL_CPPFLAGS := \
+    -Wall \
+    -Werror -Wno-error=deprecated-declarations \
+    -Wno-unused-parameter \
+    -DPRODUCT_PLATFORM=$(PRODUCT_PLATFORM) \
+    -DANDROID_TARGET=\"$(PRODUCT_PLATFORM)\"
+
+ifneq ($(filter karin_windy ,$(TARGET_DEVICE)),)
+LOCAL_CPPFLAGS += \
+    -DVARIANT_GSM=0
+endif
+
+LOCAL_SRC_FILES := \
+    init_msm.cpp \
+    init_msm_platform.cpp
+
+LOCAL_MODULE := libinit_msm
+
+include $(BUILD_STATIC_LIBRARY)
