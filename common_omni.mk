@@ -26,3 +26,8 @@ PRODUCT_PACKAGES += \
 # SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
+
+# Exclude these from build.prop, they are set by libinit
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
+    ro.product.model \
+    ro.product.device

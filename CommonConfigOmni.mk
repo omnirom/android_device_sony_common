@@ -19,6 +19,10 @@ include device/sony/common/twrp.mk
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# init_msm
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_msm
+
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 
@@ -35,3 +39,4 @@ HEALTHD_ENABLE_TRICOLOR_LED := true
 RED_LED_PATH := /sys/class/leds/led:rgb_red/brightness
 GREEN_LED_PATH := /sys/class/leds/led:rgb_green/brightness
 BLUE_LED_PATH := /sys/class/leds/led:rgb_blue/brightness
+
