@@ -19,6 +19,9 @@ include device/sony/common/twrp.mk
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# init_msm
+TARGET_INIT_VENDOR_LIB := libinit_msm
+
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 
