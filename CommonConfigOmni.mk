@@ -29,6 +29,14 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
 # DSP Manager
 TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
+#init
+TARGET_UNIFIED_DEVICE := true
+
+# Exclude these from build.prop, they are set by libinit
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
+    ro.product.model \
+    ro.product.device
+
 # Healthd
 HEALTHD_FORCE_BACKLIGHT_CONTROL := true
 HEALTHD_ENABLE_TRICOLOR_LED := true
