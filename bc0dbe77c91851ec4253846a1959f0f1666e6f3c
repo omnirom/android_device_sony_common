@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5804b501_0245ae1b",
+        "filename": "init/init_msm_platform.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000515
+      },
+      "writtenOn": "2016-06-20T18:34:30Z",
+      "side": 1,
+      "message": "I think we can use \"ro.sony.variant\" instead of \"ro.fxp.variant\"",
+      "range": {
+        "startLine": 64,
+        "startChar": 18,
+        "endLine": 64,
+        "endChar": 32
+      },
+      "revId": "bc0dbe77c91851ec4253846a1959f0f1666e6f3c",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
