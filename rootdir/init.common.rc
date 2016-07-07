@@ -162,6 +162,12 @@ on boot
     chown radio radio /data/misc/radio/copy_complete
     chmod 0660 /data/misc/radio/copy_complete
 
+    # Create data for timekeep
+    mkdir /data/time/ 0700 system system
+    write /data/time/ats_2 0
+    chmod 0666 /data/time/ats_2
+    chown system system /data/time/ats_2
+
     # Camera Recording
     mkdir /dev/video
     symlink /dev/video32 /dev/video/venus_dec
@@ -362,4 +368,3 @@ on property:persist.radio.multisim.config=dsds
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
-
