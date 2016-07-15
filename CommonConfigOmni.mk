@@ -23,6 +23,9 @@ SONY_AOSP ?= true
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 
+# Use AOSP Browser
+TARGET_USES_AOSP_BROWSER := true 
+
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
 
