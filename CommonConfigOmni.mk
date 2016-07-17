@@ -42,3 +42,11 @@ HEALTHD_ENABLE_TRICOLOR_LED := true
 RED_LED_PATH := /sys/class/leds/led:rgb_red/brightness
 GREEN_LED_PATH := /sys/class/leds/led:rgb_green/brightness
 BLUE_LED_PATH := /sys/class/leds/led:rgb_blue/brightness
+
+# Inherit Omni GSM telephony parts
+ifneq ($(filter-out karin_windy,$(TARGET_DEVICE)),)
+    PRODUCT_PROPERTY_OVERRIDES += telephony.lteOnGSMDevice=1
+    include vendor/omni/config/gsm.mk
+endif
+
+include vendor/omni/config/common.mk
