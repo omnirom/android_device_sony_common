@@ -31,3 +31,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
     ro.product.model \
     ro.product.device
+
+# Inherit from Omni custom product configuration
+ifeq ($(filter-out karin karin_windy,$(TARGET_DEVICE)),)
+#   Tablets
+    $(call inherit-product, vendor/omni/config/common_tablet.mk)
+else
+#   Phones
+    $(call inherit-product, vendor/omni/config/common.mk)
+endif
+
+# Inherit Omni GSM telephony parts
+ifneq ($(filter-out karin_windy,$(TARGET_DEVICE)),)
+    $(call inherit-product, device/sony/common/radio.mk)
+    $(call inherit-product, vendor/omni/config/gsm.mk)
+endif
