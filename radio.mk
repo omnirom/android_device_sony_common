@@ -15,3 +15,5 @@
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
+
+include vendor/omni/config/gsm.mk
