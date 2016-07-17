@@ -15,3 +15,5 @@
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
+
+$(call inherit-product, vendor/omni/config/gsm.mk)
