@@ -42,3 +42,8 @@ HEALTHD_ENABLE_TRICOLOR_LED := true
 RED_LED_PATH := /sys/class/leds/led:rgb_red/brightness
 GREEN_LED_PATH := /sys/class/leds/led:rgb_green/brightness
 BLUE_LED_PATH := /sys/class/leds/led:rgb_blue/brightness
+
+# Omni custom config
+include vendor/omni/config/version.mk
+include vendor/omni/config/packages.mk
+include vendor/omni/config/common.mk
