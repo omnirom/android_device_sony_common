@@ -7,6 +7,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_device_sony_common-init",
+    "target_path":  "device/sony/common-init",
+    "revision":     "android-7.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_device_sony_common-headers",
     "target_path":  "device/sony/common-headers",
     "revision":     "android-7.0"
