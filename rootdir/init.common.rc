@@ -176,7 +176,10 @@ on boot
     # Create symlink for fb1 as HDMI
     symlink /dev/graphics/fb1 /dev/graphics/hdmi
 
-    # Remove write permissions to video related nodes
+    # Graphics Permissions
+    chown system graphics /sys/class/graphics/fb0/idle_time
+    chmod 0664 /sys/class/graphics/fb0/idle_time
+
     chown system graphics /sys/class/graphics/fb1/avi_itc
     chown system graphics /sys/class/graphics/fb1/avi_cn0_1
     chown system graphics /sys/class/graphics/fb1/hpd
@@ -259,7 +262,7 @@ service ril-daemon2 /system/bin/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket sap_uim_socket2 stream 660 bluetooth bluetooth
-    socket rild2-debug stream 660 radio system
+    socket rild-debug2 stream 660 radio system
     user root
     disabled
     group radio cache inet misc audio log
