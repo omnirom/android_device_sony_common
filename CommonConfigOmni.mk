@@ -19,19 +19,8 @@ include device/sony/common/twrp.mk
 # Sony AOSP Project
 SONY_AOSP ?= true
 
-# init_msm
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
-
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
-
-# Custom bootimage
-BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
 
 # DSP Manager
 TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
