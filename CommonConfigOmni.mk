@@ -19,6 +19,12 @@ include device/sony/common/twrp.mk
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# Unified Device
+TARGET_UNIFIED_DEVICE := true
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
+
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 
