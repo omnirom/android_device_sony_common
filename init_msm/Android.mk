@@ -1,4 +1,5 @@
-# Copyright (C) 2014 The Android Open Source Project
+#
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,22 +12,28 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# Include common
-include device/sony/common/common.mk
+LOCAL_PATH := $(call my-dir)
 
-# Variant linking script
-PRODUCT_COPY_FILES += \
-    device/sony/common/releasetools/firmware.sh:utilities/firmware.sh
+include $(CLEAR_VARS)
 
-# SELinux
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1
+LOCAL_C_INCLUDES := system/core/init
 
-# Exclude these from build.prop, they are set by libinit
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
-    ro.product.model \
-    ro.product.device
+LOCAL_SHARED_LIBRARIES := libcutils
 
-# Omni custom config
-$(call inherit-product, vendor/omni/config/common.mk)
+LOCAL_CPPFLAGS := \
+    -Wall \
+    -Werror -Wno-error=deprecated-declarations \
+    -Wno-unused-parameter
+
+LOCAL_CLANG := true
+
+LOCAL_SRC_FILES := \
+    init_msm.cpp \
+    init_msm_platform.cpp
+
+LOCAL_MODULE := libinit_msm
+
+include $(BUILD_STATIC_LIBRARY)
+
