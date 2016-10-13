@@ -19,6 +19,9 @@ include device/sony/common/twrp.mk
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# cryptfs hw
+TARGET_CRYPTFS_HW_PATH := device/sony/common/cryptfs_hw
+
 # init_msm
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
