@@ -250,7 +250,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # BT address
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bt.bdaddr_path=/data/etc/bluetooth_bdaddr
+    ro.bt.bdaddr_path=/data/misc/bluetooth/bluetooth_bdaddr
 
 # System prop for NFC DT
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -258,7 +258,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=0 \
+    persist.camera.HAL3.enabled=1 \
     persist.camera.gyro.disable=1 \
     persist.camera.feature.cac=0 \
     persist.camera.ois.disable=0
