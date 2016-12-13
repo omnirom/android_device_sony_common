@@ -26,7 +26,9 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
 
 # Kernel source
-TARGET_KERNEL_SOURCE := kernel/sony/msm
+ifeq ($(TARGET_KERNEL_SOURCE),)
+    TARGET_KERNEL_SOURCE := kernel/sony/msm
+endif
 
 # Required for FMRadio
 BOARD_DISABLE_FMRADIO_LIBJNI := true
