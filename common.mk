@@ -269,11 +269,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=1 \
     persist.camera.gyro.disable=1 \
     persist.camera.feature.cac=0 \
     persist.camera.ois.disable=0 \
     persist.camera.zsl.mode=1
+
+ifneq ($(TARGET_BOARD_PLATFORM),msm8974)
+    PRODUCT_PROPERTY_OVERRIDES += persist.camera.HAL3.enabled=1
+else
+    PRODUCT_PROPERTY_OVERRIDES += persist.camera.HAL3.enabled=0
+endif
 
 # Sensors debug
 PRODUCT_PROPERTY_OVERRIDES += \
