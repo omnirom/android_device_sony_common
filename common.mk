@@ -57,7 +57,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(COMMON_PATH)/rootdir/system/etc/gps.conf:system/etc/gps.conf \
     $(COMMON_PATH)/rootdir/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    $(COMMON_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config \
     $(COMMON_PATH)/rootdir/system/etc/sensors/sensors_settings:system/etc/sensors/sensors_settings
 
 # QMI
@@ -276,6 +275,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifneq ($(TARGET_BOARD_PLATFORM),msm8974)
     PRODUCT_PROPERTY_OVERRIDES += persist.camera.HAL3.enabled=1
+    #sec_config (sensors) is included into rhine and shinano and shouldn't be overwriten by common one
+    PRODUCT_COPY_FILES += $(COMMON_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config
 else
     PRODUCT_PROPERTY_OVERRIDES += persist.camera.HAL3.enabled=0
 endif
