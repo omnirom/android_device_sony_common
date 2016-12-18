@@ -28,9 +28,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 
-# DSP Manager
-TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
-
 # Required for FMRadio
 BOARD_DISABLE_FMRADIO_LIBJNI := true
 
