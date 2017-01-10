@@ -29,6 +29,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 
+# Use actual kernel headers
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+
 # Required for FMRadio
 BOARD_HAVE_FM_RADIO := true
 BOARD_DISABLE_FMRADIO_LIBJNI := true
