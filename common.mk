@@ -160,10 +160,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
-# ExtendedSettings
-PRODUCT_PACKAGES += \
-    ExtendedSettings
-
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
