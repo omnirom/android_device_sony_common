@@ -58,5 +58,11 @@
     "repository":   "android_packages_apps_ExtendedSettings",
     "target_path":  "packages/apps/ExtendedSettings",
     "revision":     "android-6.0"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_hardware_sony_location",
+    "target_path":  "hardware/sony/location",
+    "revision":     "android-7.1"
   }
 ]
