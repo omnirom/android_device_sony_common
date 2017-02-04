@@ -12,7 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PACKAGE_OVERLAYS += device/sony/common/overlay
+# Common path
+COMMON_PATH := device/sony/common
+
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
 # Common Specific Permissions
 PRODUCT_COPY_FILES += \
@@ -46,22 +49,22 @@ PRODUCT_COPY_FILES += \
 
 # Common init
 PRODUCT_COPY_FILES += \
-    device/sony/common/rootdir/init.common.rc:root/init.common.rc \
-    device/sony/common/rootdir/init.common.usb.rc:root/init.common.usb.rc
+    $(COMMON_PATH)/rootdir/init.common.rc:root/init.common.rc \
+    $(COMMON_PATH)/rootdir/init.common.usb.rc:root/init.common.usb.rc
 
 # Common etc
 PRODUCT_COPY_FILES += \
-    device/sony/common/rootdir/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/sony/common/rootdir/system/etc/gps.conf:system/etc/gps.conf \
-    device/sony/common/rootdir/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    device/sony/common/rootdir/system/etc/sec_config:system/etc/sec_config \
-    device/sony/common/rootdir/system/etc/sensors/sensors_settings:system/etc/sensors/sensors_settings
+    $(COMMON_PATH)/rootdir/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(COMMON_PATH)/rootdir/system/etc/gps.conf:system/etc/gps.conf \
+    $(COMMON_PATH)/rootdir/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
+    $(COMMON_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config \
+    $(COMMON_PATH)/rootdir/system/etc/sensors/sensors_settings:system/etc/sensors/sensors_settings
 
 # QMI
 PRODUCT_COPY_FILES += \
-    device/sony/common/rootdir/system/etc/data/dsi_config.xml:system/etc/data/dsi_config.xml \
-    device/sony/common/rootdir/system/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
-    device/sony/common/rootdir/system/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml
+    $(COMMON_PATH)/rootdir/system/etc/data/dsi_config.xml:system/etc/data/dsi_config.xml \
+    $(COMMON_PATH)/rootdir/system/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
+    $(COMMON_PATH)/rootdir/system/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -131,7 +134,12 @@ PRODUCT_PACKAGES += \
 
 # QCOM OSS
 PRODUCT_PACKAGES += \
-   librmnetctl
+    librmnetctl
+
+# QCOM GPS
+PRODUCT_PACKAGES += \
+    libloc_api_v02 \
+    libloc_ds_api
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -151,6 +159,10 @@ PRODUCT_PACKAGES += \
 # ExtendedSettings
 PRODUCT_PACKAGES += \
     ExtendedSettings
+
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
 
 # APN list
 PRODUCT_COPY_FILES += \
@@ -258,10 +270,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=0 \
     persist.camera.gyro.disable=1 \
     persist.camera.feature.cac=0 \
-    persist.camera.ois.disable=0
+    persist.camera.ois.disable=0 \
+    persist.camera.zsl.mode=1 \
+    persist.camera.time.monotonic=0
+
+ifneq ($(filter shinano rhine, $(SOMC_PLATFORM)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=0
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=1
+endif
 
 # Sensors debug
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -269,3 +290,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.qualcomm.sns.daemon=0 \
     debug.qualcomm.sns.hal=0 \
     debug.qualcomm.sns.libsensor1=0
+
+# sdcardFS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
