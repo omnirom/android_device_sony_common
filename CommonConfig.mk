@@ -57,7 +57,7 @@ TARGET_NO_RPC := true
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_HAL_STATIC_LIBRARIES += libhealthd.$(TARGET_DEVICE)
+#BOARD_HAL_STATIC_LIBRARIES += libhealthd.$(TARGET_DEVICE)
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
