@@ -99,24 +99,7 @@ ui_print "Device Variant: ${variant}";
 
 # Set product model property
 touch /system/vendor/build.prop;
-$(echo "ro.product.model=${variant}" > /system/vendor/build.prop);
-
-dsds=$(\
-    cat /tmp/variants |\
-    grep ${variant} |\
-    grep DSDS |\
-    tr -d '\n\r' \
-);
-
-if [ "${dsds}" != "" ]; then
-    $(echo "ro.telephony.default_network=9,1" >> /system/vendor/build.prop);
-    $(echo "persist.multisim.config=dsds" >> /system/vendor/build.prop);
-    $(echo "persist.radio.multisim.config=dsds" >> /system/vendor/build.prop);
-else
-    $(echo "ro.telephony.default_network=9" >> /system/vendor/build.prop);
-fi
-
-# Set permissions
+$(echo "ro.sony.variant=${variant}" >> /system/vendor/build.prop);
 chmod 0644 /system/vendor/build.prop;
 
 if [ ! -e /dev/block/bootdevice/by-name/modem ] && [ -d /system/blobs/${variant}/ ]; then
