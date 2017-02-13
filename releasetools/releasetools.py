@@ -24,12 +24,8 @@ TARGET_DIR = os.getenv('OUT')
 UTILITIES_DIR = os.path.join(TARGET_DIR, 'utilities')
 
 def FullOTA_InstallEnd(info):
-  info.output_zip.write(os.path.join(UTILITIES_DIR, "variants"), "variants")
   info.output_zip.write(os.path.join(UTILITIES_DIR, "updater.sh"), "updater.sh")
 
-  info.script.AppendExtra(
-        ('package_extract_file("variants", "/tmp/variants");\n'
-         'set_metadata("/tmp/variants", "uid", 0, "gid", 0, "mode", 0755);'))
   info.script.AppendExtra(
         ('package_extract_file("updater.sh", "/tmp/updater.sh");\n'
          'set_metadata("/tmp/updater.sh", "uid", 0, "gid", 0, "mode", 0755);'))
