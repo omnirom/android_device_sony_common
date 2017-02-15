@@ -70,8 +70,14 @@ BOARD_SECCOMP_POLICY += $(COMMON_PATH)/seccomp
 # Init configuration for init_sony
 include $(COMMON_PATH)/init/config.mk
 
-# Disable dex-preoptimization to speed up first boot sequence
-WITH_DEXPREOPT := false
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
 
 BUILD_KERNEL := true
 -include device/sony/common-headers/KernelHeaders.mk
