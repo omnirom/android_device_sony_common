@@ -25,32 +25,6 @@ set_log() {
     exec >> /tmp/omni/"${1}" 2>&1;
 }
 
-# ui_print
-OUTFD=$(\
-    ps | \
-    grep -v "grep" | \
-    grep -o -E "/tmp/updater .*" | \
-    cut -d " " -f 3\
-);
-
-if test -e /tmp/update_binary ; then
-    OUTFD=$(\
-        ps | \
-        grep -v "grep" | \
-        grep -o -E "update_binary(.*)" | \
-        cut -d " " -f 3\
-    );
-fi
-
-ui_print() {
-    if [ "${OUTFD}" != "" ]; then
-        echo "ui_print ${1} " 1>&"${OUTFD}";
-        echo "ui_print " 1>&"${OUTFD}";
-    else
-        echo "${1}";
-    fi
-}
-
 # set log
 set_log variant_detect.log
 
@@ -94,29 +68,11 @@ variant=$(\
     tr -d '\n\r' | \
     tr '[a-z]' '[A-Z]' \
 );
+echo "Variant: ${variant}";
 
-ui_print "Device Variant: ${variant}";
-
-# Set product model property
+# Set the variant as a prop
 touch /system/vendor/build.prop;
-$(echo "ro.product.model=${variant}" > /system/vendor/build.prop);
-
-dsds=$(\
-    cat /tmp/variants |\
-    grep ${variant} |\
-    grep DSDS |\
-    tr -d '\n\r' \
-);
-
-if [ "${dsds}" != "" ]; then
-    $(echo "ro.telephony.default_network=9,1" >> /system/vendor/build.prop);
-    $(echo "persist.multisim.config=dsds" >> /system/vendor/build.prop);
-    $(echo "persist.radio.multisim.config=dsds" >> /system/vendor/build.prop);
-else
-    $(echo "ro.telephony.default_network=9" >> /system/vendor/build.prop);
-fi
-
-# Set permissions
+$(echo "ro.sony.variant=${variant}" >> /system/vendor/build.prop);
 chmod 0644 /system/vendor/build.prop;
 
 if [ ! -e /dev/block/bootdevice/by-name/modem ] && [ -d /system/blobs/${variant}/ ]; then
