@@ -19,6 +19,10 @@ include device/sony/common/twrp.mk
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# Override the default android_filesystem_config.h
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
+    device/sony/common/include/private/android_filesystem_config.h
+
 # Unified Device
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
