@@ -161,8 +161,10 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
 # ExtendedSettings
+ifneq ($strip ($USE_CAMERA_STUB),true)
 PRODUCT_PACKAGES += \
     ExtendedSettings
+endif
 
 # APN list
 PRODUCT_COPY_FILES += \
@@ -269,6 +271,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port=I2C
 
+# AOSP Camera
+ifneq ($strip ($USE_CAMERA_STUB),true)
 # Camera Debug
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hal.debug=0 \
@@ -293,6 +297,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=0 \
     media.stagefright.less-secure=true \
     media.stagefright.legacyencoder=true
+endif
 
 # Sensors debug
 PRODUCT_PROPERTY_OVERRIDES += \
