@@ -1,11 +1,5 @@
 [
   {
-    "remote":       "choose",
-    "repository":   "android_kernel_sony_msm8994",
-    "target_path":  "kernel/sony/msm",
-    "revision":     "7.1-caf"
-  },
-  {
     "remote":       "omnirom",
     "repository":   "android_device_sony_common-init",
     "target_path":  "device/sony/common-init",
@@ -57,24 +51,6 @@
     "remote":       "omnirom",
     "repository":   "android_packages_apps_FMRadio",
     "target_path":  "packages/apps/FMRadio",
-    "revision":     "android-7.1"
-  },
-  {
-    "remote":       "omnirom",
-    "repository":   "android_hardware_qcom_display-caf-msm8992",
-    "target_path":  "hardware/qcom/display-caf-msm8992",
-    "revision":     "android-7.1"
-  },
-  {
-    "remote":       "omnirom",
-    "repository":   "android_hardware_qcom_media-caf-msm8992",
-    "target_path":  "hardware/qcom/media-caf-msm8992",
-    "revision":     "android-7.1"
-  },
-  {
-    "remote":       "omnirom",
-    "repository":   "android_hardware_qcom_audio-caf-msm8992",
-    "target_path":  "hardware/qcom/audio-caf-msm8992",
     "revision":     "android-7.1"
   }
 ]
