@@ -36,7 +36,7 @@
     "revision":     "android-7.1"
   },
   {
-    "remote":       "omni",
+    "remote":       "omnirom",
     "repository":   "android_device_sony_sepolicy",
     "target_path":  "device/sony/sepolicy",
     "revision":     "android-7.1"
