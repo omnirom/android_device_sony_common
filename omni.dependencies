@@ -1,6 +1,6 @@
 [
   {
-    "remote":       "omni",
+    "remote":       "choose",
     "repository":   "android_kernel_sony_msm8994",
     "target_path":  "kernel/sony/msm",
     "revision":     "7.1-caf"
