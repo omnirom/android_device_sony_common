@@ -26,9 +26,6 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
 
-# Kernel source
-TARGET_KERNEL_SOURCE := kernel/sony/msm
-
 # Use actual kernel headers
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
