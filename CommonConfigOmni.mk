@@ -29,6 +29,12 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 
+# Custom bootimage
+ifneq ($(filter rhine shinano kanuti kitakami loire,$(PRODUCT_PLATFORM)),)
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/common/boot/custombootimg.mk
+endif
+
 # Required for FMRadio
 BOARD_HAVE_FM_RADIO := true
 BOARD_DISABLE_FMRADIO_LIBJNI := true
