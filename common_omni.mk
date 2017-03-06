@@ -23,6 +23,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+ifeq ($(BOARD_HAVE_BCM_FM), true)
+# BT/FMRadio
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rfkilldisabled=1
+endif
+
 # Exclude these from build.prop, they are set by libinit
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
     ro.product.model \
