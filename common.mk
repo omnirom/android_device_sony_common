@@ -308,3 +308,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # sdcardFS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
+
+# BT/FMRadio
+ifneq ($(filter shinano kitakami loire tone,$(PRODUCT_PLATFORM)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rfkilldisabled=1
+endif
