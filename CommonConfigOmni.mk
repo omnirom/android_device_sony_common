@@ -12,12 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Common config
-include device/sony/common/CommonConfig.mk
-include device/sony/common/twrp.mk
-
 # Sony AOSP Project
 SONY_AOSP ?= true
+
+# Enforcing SELinux
+BOARD_USE_ENFORCING_SELINUX := true
 
 # Unified Device
 TARGET_UNIFIED_DEVICE := true
@@ -32,3 +31,7 @@ TARGET_KERNEL_SOURCE := kernel/sony/msm
 # Required for FMRadio
 BOARD_HAVE_FM_RADIO := true
 BOARD_DISABLE_FMRADIO_LIBJNI := true
+
+# Common config
+include device/sony/common/CommonConfig.mk
+include device/sony/common/twrp.mk
