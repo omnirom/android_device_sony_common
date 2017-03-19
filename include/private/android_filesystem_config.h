@@ -32,7 +32,7 @@
 #include <private/android_filesystem_capability.h>
 #endif
 
-// #define SONY_UID
+#define SONY_UID
 #define CAF_UID
 
 #define CAP_MASK_LONG(cap_name)  (1ULL << (cap_name))
@@ -107,6 +107,12 @@
  * used here */
 #define AID_OEM_RESERVED_START 2900
 
+#ifdef CAF_UID
+#define AID_QCOM_DIAG          2950  /* access to QTI diagnostic resources */
+#define AID_RFS                2951  /* Remote Filesystem for peripheral processors */
+#define AID_RFS_SHARED         2952  /* Shared files for Remote Filesystem for peripheral processors  */
+#endif
+
 #ifdef SONY_UID
 #define AID_IDD                2987  /* SONY idd */
 #define AID_UPDATEMISCTA       2991  /* SONY updatemiscta */
@@ -133,6 +139,9 @@
 
 #ifdef CAF_UID
 #define AID_SENSORS       3011 /* access to /dev/socket/sensor_ctl_socket & QCCI/QCSI */
+
+#define AID_RFS_OLD          3012  /* DEPRECATED OLD ID FOR RFS, DO NOT USE */
+#define AID_RFS_SHARED_OLD   3013  /* DEPRECATED OLD ID FOR RFS-SHARED  */
 #endif
 
 /* The range 5000-5999 is also reserved for OEM, and must never be used here. */
@@ -229,6 +238,13 @@ static const struct android_id_info android_ids[] = {
     { "cache",         AID_CACHE, },
     { "diag",          AID_DIAG, },
 
+#ifdef CAF_UID
+    { "qcom_diag",     AID_QCOM_DIAG, },
+
+    { "rfs",           AID_RFS, },
+    { "rfs_shared",    AID_RFS_SHARED, },
+#endif
+
     { "net_bt_admin",  AID_NET_BT_ADMIN, },
     { "net_bt",        AID_NET_BT, },
     { "inet",          AID_INET, },
@@ -251,6 +267,11 @@ static const struct android_id_info android_ids[] = {
     { "credmgr_client",  AID_CREDMGR_CLI, },
     { "tad",             AID_TAD, },
     { "ta_qmi",          AID_TA_QMI, },
+#endif
+
+#ifdef CAF_UID
+    { "rfs_old",           AID_RFS_OLD, },
+    { "rfs_shared_old",    AID_RFS_SHARED_OLD, },
 #endif
 
     { "everybody",     AID_EVERYBODY, },
