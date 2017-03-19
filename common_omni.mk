@@ -15,6 +15,9 @@
 # Include common
 include device/sony/common/common.mk
 
+# Remove Telephony Extension
+BOARD_USES_TELEPHONY_EXTENSION := false
+
 # Variant linking script
 PRODUCT_COPY_FILES += \
     device/sony/common/releasetools/updater.sh:utilities/updater.sh
