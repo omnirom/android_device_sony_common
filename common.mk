@@ -57,7 +57,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(COMMON_PATH)/rootdir/system/etc/gps.conf:system/etc/gps.conf \
     $(COMMON_PATH)/rootdir/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    $(COMMON_PATH)/rootdir/system/etc/sec_config:system/etc/sec_config \
     $(COMMON_PATH)/rootdir/system/etc/sensors/sensors_settings:system/etc/sensors/sensors_settings
 
 # QMI
