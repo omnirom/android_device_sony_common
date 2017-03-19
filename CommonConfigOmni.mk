@@ -15,6 +15,13 @@
 # Common path
 COMMON_PATH := device/sony/common
 
+# Headers path
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
+# Override the default android_filesystem_config.h
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
+    $(COMMON_PATH)/include/private/android_filesystem_config.h
+
 # Enforcing SELinux
 BOARD_USE_ENFORCING_SELINUX := true
 
