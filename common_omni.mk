@@ -30,3 +30,9 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
 
 # Omni custom config
 $(call inherit-product, vendor/omni/config/common.mk)
+
+# Do not dexpreopt those modules
+$(call add-product-dex-preopt-module-config,telephony-common,disable)
+$(call add-product-dex-preopt-module-config,Telecom,disable)
+$(call add-product-dex-preopt-module-config,TeleService,disable)
+
