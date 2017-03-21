@@ -40,6 +40,9 @@ ifeq ($(strip $(TARGET_KERNEL_SOURCE)),)
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 endif
 
+# Use actual kernel headers
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+
 # Required for FMRadio
 BOARD_HAVE_FM_RADIO := true
 BOARD_DISABLE_FMRADIO_LIBJNI := true
