@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Common path
-COMMON_PATH := device/sony/common
+COMMON_PATH := device/sony/common-msm8996
 
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 

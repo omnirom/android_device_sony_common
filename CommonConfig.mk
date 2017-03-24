@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Common path
-COMMON_PATH := device/sony/common
+COMMON_PATH := device/sony/common-msm8996
 
 TARGET_BOARD_AUTO := true
 
@@ -76,11 +76,11 @@ include $(COMMON_PATH)/init/config.mk
 WITH_DEXPREOPT := false
 
 BUILD_KERNEL := true
--include device/sony/common-headers/KernelHeaders.mk
+-include device/sony/common-headers-msm8996/KernelHeaders.mk
 -include device/sony/common-kernel/KernelConfig.mk
 
 # Include build helpers for QCOM proprietary
 -include vendor/qcom/proprietary/common/build/proprietary-build.mk
 
 # SELinux
-include device/sony/sepolicy/sepolicy.mk
+include device/sony/sepolicy-msm8996/sepolicy.mk
