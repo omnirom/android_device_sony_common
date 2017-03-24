@@ -134,7 +134,12 @@ PRODUCT_PACKAGES += \
 
 # QCOM OSS
 PRODUCT_PACKAGES += \
-   librmnetctl
+    librmnetctl
+
+# QCOM GPS
+PRODUCT_PACKAGES += \
+    libloc_api_v02 \
+    libloc_ds_api
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -217,13 +222,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Hardware User Interface parameters
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hwui.texture_cache_size=72 \
-    ro.hwui.layer_cache_size=48 \
-    ro.hwui.r_buffer_cache_size=8 \
-    ro.hwui.path_cache_size=32 \
+    ro.hwui.texture_cache_size=48 \
+    ro.hwui.layer_cache_size=32 \
+    ro.hwui.r_buffer_cache_size=4 \
+    ro.hwui.path_cache_size=24 \
     ro.hwui.gradient_cache_size=1 \
-    ro.hwui.drop_shadow_cache_size=6 \
-    ro.hwui.texture_cache_flushrate=0.4 \
+    ro.hwui.drop_shadow_cache_size=5 \
+    ro.hwui.texture_cache_flushrate=0.5 \
     ro.hwui.text_small_cache_width=1024 \
     ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_large_cache_width=2048 \
@@ -240,6 +245,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 # Fluencetype can be "fluence" or "fluencepro" or "none"
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qc.sdk.audio.fluencetype=fluence \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicecomm=true \
     persist.audio.fluence.voicerec=false \
@@ -267,10 +273,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port=I2C
 
-# Camera
+# Camera Debug
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.hal.debug=0 \
+    persist.camera.kpi.debug=0 \
+    persist.camera.global.debug=0
+
+# Disable Dual Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.dual.camera.mpo=0 \
+    persist.camera.dc.frame.sync=0 \
+    persist.camera.dcrf.enable=0
+
+# Camera Features
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
     persist.camera.gyro.disable=1 \
+    persist.camera.stats.af.paaf=0 \
     persist.camera.feature.cac=0 \
     persist.camera.ois.disable=0 \
     persist.camera.zsl.mode=1
@@ -285,3 +304,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # sdcardFS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
+
+# BT/FMRadio
+ifeq ($(filter rhine kanuti,$(SOMC_PLATFORM)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.rfkilldisabled=1
+endif

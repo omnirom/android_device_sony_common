@@ -15,17 +15,21 @@
 # Common path
 COMMON_PATH := device/sony/common
 
+TARGET_BOARD_AUTO := true
+
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RECOVERY := false
 TARGET_NO_KERNEL := false
 
 # common cmdline parameters
-BOARD_KERNEL_CMDLINE += user_debug=31 androidboot.selinux=enforcing
+ifneq ($(BOARD_USE_ENFORCING_SELINUX),true)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+endif
 BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y
 BOARD_KERNEL_CMDLINE += coherent_pool=8M
-BOARD_KERNEL_CMDLINE += sched_enable_power_aware=1
+BOARD_KERNEL_CMDLINE += sched_enable_power_aware=1 user_debug=31
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -44,7 +48,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
-#Camera
+# Camera
 TARGET_USES_AOSP := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 BOARD_QTI_CAMERA_V2 := true
@@ -55,7 +59,9 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 
 # Charger
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_HAL_STATIC_LIBRARIES += libhealthd.$(TARGET_DEVICE)
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
