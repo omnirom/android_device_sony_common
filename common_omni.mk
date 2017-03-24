@@ -12,12 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+COMMON_PATH := device/sony/common-msm8996
+
 # Include common
-include device/sony/common/common.mk
+include $(COMMON_PATH)/common.mk
 
 # Variant linking script
 PRODUCT_COPY_FILES += \
-    device/sony/common/releasetools/updater.sh:utilities/updater.sh
+    $(COMMON_PATH)/releasetools/updater.sh:utilities/updater.sh
 
 # SELinux
 PRODUCT_PROPERTY_OVERRIDES += \

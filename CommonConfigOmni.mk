@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+COMMON_PATH := device/sony/common-msm8996
+
 # Sony AOSP Project
 SONY_AOSP ?= true
 
@@ -23,15 +25,15 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # Kernel source
-TARGET_KERNEL_SOURCE := kernel/sony/msm
+TARGET_KERNEL_SOURCE := kernel/sony/msm8996
 
 # Required for FMRadio
 BOARD_HAVE_FM_RADIO := true
 BOARD_DISABLE_FMRADIO_LIBJNI := true
 
 # Common config
-include device/sony/common/CommonConfig.mk
-include device/sony/common/twrp.mk
+include $(COMMON_PATH)/CommonConfig.mk
+include $(COMMON_PATH)/twrp.mk
