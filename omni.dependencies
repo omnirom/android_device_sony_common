@@ -2,8 +2,8 @@
   {
     "remote":       "omnirom",
     "repository":   "android_kernel_sony_msm",
-    "target_path":  "kernel/sony/msm",
-    "revision":     "android-7.1"
+    "target_path":  "kernel/sony/msm8996",
+    "revision":     "android-7.1-exp"
   },
   {
     "remote":       "omnirom",
@@ -14,8 +14,8 @@
   {
     "remote":       "omnirom",
     "repository":   "android_device_sony_common-headers",
-    "target_path":  "device/sony/common-headers",
-    "revision":     "android-7.1"
+    "target_path":  "device/sony/common-headers-msm8996",
+    "revision":     "android-7.1-exp"
   },
   {
     "remote":       "omnirom",
@@ -44,8 +44,8 @@
   {
     "remote":       "omnirom",
     "repository":   "android_device_sony_sepolicy",
-    "target_path":  "device/sony/sepolicy",
-    "revision":     "android-7.1"
+    "target_path":  "device/sony/sepolicy-msm8996",
+    "revision":     "android-7.1-exp"
   },
   {
     "remote":       "omnirom",
@@ -56,8 +56,8 @@
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_camera",
-    "target_path":  "hardware/sony/camera",
-    "revision":     "android-7.1"
+    "target_path":  "hardware/sony/camera-msm8996",
+    "revision":     "android-7.1-exp"
   },
   {
     "remote":       "omnirom",
