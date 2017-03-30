@@ -17,6 +17,9 @@ COMMON_PATH := device/sony/common-msm8996
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# Also use headers from kernel during build process
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+
 # Enforcing SELinux
 BOARD_USE_ENFORCING_SELINUX := true
 
