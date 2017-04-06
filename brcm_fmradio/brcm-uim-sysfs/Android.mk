@@ -18,6 +18,10 @@ LOCAL_CLANG := false
 LOCAL_CFLAGS:= -c -W -Wall -O2 -D_POSIX_SOURCE -DUIM_DEBUG -DBLUEDROID_ENABLE_V4L2
 LOCAL_SHARED_LIBRARIES:= libnetutils libcutils liblog
 
+ifeq ($(strip $(BOARD_KERNEL_VERSION)),3_18)
+LOCAL_CFLAGS += -DKERNEL_3_18
+endif
+
 LOCAL_MODULE := brcm-uim-sysfs
 LOCAL_MODULE_TAGS := optional
 

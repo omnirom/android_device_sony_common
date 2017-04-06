@@ -18,6 +18,14 @@ SONY_AOSP ?= true
 # Common path
 COMMON_PATH := device/sony/common
 
+# Default Kernel version
+ifeq ($(strip $(BOARD_KERNEL_VERSION)),)
+BOARD_KERNEL_VERSION := 3_10
+endif
+ifeq ($(strip $(TARGET_KERNEL_SOURCE)),)
+TARGET_KERNEL_SOURCE := kernel/sony/msm
+endif
+
 # Common from upstream
 $(call inherit-product, $(COMMON_PATH)/common.mk)
 
