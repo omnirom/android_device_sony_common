@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifeq ($(filter-out satsuki sumire suzuran suzu kugo,$(TARGET_DEVICE)),)
+ifeq ($(filter-out satsuki sumire suzuran suzu kugo dora kagura keyaki,$(TARGET_DEVICE)),)
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -29,7 +29,7 @@ LOCAL_SRC_FILES += fpc_imp_kitakami.c
 LOCAL_CFLAGS += -DFPC_DB_PER_GID
 endif
 
-ifeq ($(filter-out kugo suzu,$(TARGET_DEVICE)),)
+ifeq ($(filter-out kugo suzu dora kagura keyaki,$(TARGET_DEVICE)),)
 LOCAL_SRC_FILES += fpc_imp_loire.c
 endif
 
@@ -37,6 +37,12 @@ LOCAL_CFLAGS += -std=c99
 LOCAL_SHARED_LIBRARIES := liblog \
 			  libdl \
 			  libutils
+
+SYSFS_PREFIX := "/sys/devices/soc.0/fpc1145_device/"
+ifneq ($(filter tone,$(PRODUCT_PLATFORM)),)
+SYSFS_PREFIX := "/sys/devices/soc/fpc1145_device/"
+endif
+LOCAL_CFLAGS += -DSYSFS_PREFIX=\"$(SYSFS_PREFIX)\"
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include

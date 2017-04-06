@@ -77,8 +77,10 @@ include $(COMMON_PATH)/init/config.mk
 WITH_DEXPREOPT := false
 
 BUILD_KERNEL := true
+ifeq ($(filter tone,$(PRODUCT_PLATFORM)),)
 -include device/sony/common-headers/KernelHeaders.mk
 -include device/sony/common-kernel/KernelConfig.mk
+endif
 
 # Include build helpers for QCOM proprietary
 -include vendor/qcom/proprietary/common/build/proprietary-build.mk
