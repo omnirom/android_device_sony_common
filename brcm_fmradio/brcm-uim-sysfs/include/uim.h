@@ -143,7 +143,6 @@ typedef struct {
  *  brcm_sh_ldisc.c (v4l2_drivers) and board specific file (android kernel source) */
 #define INSTALL_SYSFS_ENTRY "/sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc.93/install"
 #define LDISC_VENDOR_PARAMS   "/sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc.93/vendor_params"
-
 #define BDADDR_SYSFS_ENTRY  "/sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc.93/bdaddr"
 #define FW_PATCHFILE_SYSFS_ENTRY  "/sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc.93/fw_patchfile"
 #define LDISC_SYSFS_SNOOP     "/sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc.93/snoop_enable"

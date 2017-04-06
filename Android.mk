@@ -1,4 +1,4 @@
-ifneq ($(filter yukon rhine shinano kanuti kitakami loire,$(PRODUCT_PLATFORM)),)
+ifneq ($(filter yukon rhine shinano kanuti kitakami loire tone,$(PRODUCT_PLATFORM)),)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -85,6 +85,11 @@ audio-hal := hardware/qcom/audio
 display-hal := hardware/qcom/display/msm8994
 gps-hal := hardware/qcom/gps/msm8994
 media-hal := hardware/qcom/media/msm8974
+
+ifneq ($(filter tone,$(PRODUCT_PLATFORM)),)
+display-hal := hardware/qcom/display/msm8996
+media-hal := hardware/qcom/media/msm8996
+endif
 
 include $(display-hal)/Android.mk
 include $(call all-makefiles-under,$(audio-hal))

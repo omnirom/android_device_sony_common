@@ -35,8 +35,10 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
-# Kernel source
+# Default Kernel version
+ifeq ($(strip $(TARGET_KERNEL_SOURCE)),)
 TARGET_KERNEL_SOURCE := kernel/sony/msm
+endif
 
 # Required for FMRadio
 BOARD_HAVE_FM_RADIO := true
