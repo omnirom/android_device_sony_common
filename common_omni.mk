@@ -12,12 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include common
-include device/sony/common/common.mk
+# Sony AOSP Project
+SONY_AOSP ?= true
+
+# Common path
+COMMON_PATH := device/sony/common
+
+# Common from upstream
+$(call inherit-product, $(COMMON_PATH)/common.mk)
 
 # Variant linking script
 PRODUCT_COPY_FILES += \
-    device/sony/common/releasetools/updater.sh:utilities/updater.sh
+    $(COMMON_PATH)/releasetools/updater.sh:utilities/updater.sh
 
 # SELinux
 PRODUCT_PROPERTY_OVERRIDES += \

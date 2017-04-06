@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Sony AOSP Project
-SONY_AOSP ?= true
+# Common path
+COMMON_PATH := device/sony/common
 
 # Enforcing SELinux
 BOARD_USE_ENFORCING_SELINUX := true
@@ -23,7 +23,7 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/sony/common/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
 # Kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
@@ -33,5 +33,5 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_DISABLE_FMRADIO_LIBJNI := true
 
 # Common config
-include device/sony/common/CommonConfig.mk
-include device/sony/common/twrp.mk
+include $(COMMON_PATH)/CommonConfig.mk
+include $(COMMON_PATH)/twrp.mk
