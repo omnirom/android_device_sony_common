@@ -91,10 +91,12 @@ display-hal := hardware/qcom/display/msm8996
 media-hal := hardware/qcom/media/msm8996
 endif
 
+ifneq ($(USE_CAMERA_STUB),true)
 include $(display-hal)/Android.mk
+include $(call all-makefiles-under,$(media-hal))
+endif
 include $(call all-makefiles-under,$(audio-hal))
 include $(call all-makefiles-under,$(gps-hal))
-include $(call all-makefiles-under,$(media-hal))
 
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 ifneq ($(filter rhine,$(PRODUCT_PLATFORM)),)
