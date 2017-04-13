@@ -22,6 +22,9 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := \
     $(COMMON_PATH)/include/private/android_filesystem_config.h
 
+# cryptfs hw
+TARGET_CRYPTFS_HW_PATH := device/sony/common/cryptfs_hw
+
 # Also use headers from kernel during build process
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
