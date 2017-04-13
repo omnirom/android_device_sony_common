@@ -21,6 +21,10 @@ COMMON_PATH := device/sony/common
 # Common from upstream
 $(call inherit-product, $(COMMON_PATH)/common.mk)
 
+# cryptfs hw
+PRODUCT_PACKAGES += \
+    libcryptfs_hw
+
 # Variant linking script
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/releasetools/updater.sh:utilities/updater.sh
