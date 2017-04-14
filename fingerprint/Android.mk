@@ -39,8 +39,8 @@ LOCAL_SHARED_LIBRARIES := liblog \
 			  libutils
 
 SYSFS_PREFIX := "/sys/devices/soc.0/fpc1145_device/"
-ifneq ($(filter tone,$(PRODUCT_PLATFORM)),)
-SYSFS_PREFIX := "/sys/devices/soc/fpc1145_device/"
+ifneq ($(BOARD_HAVE_FPC_SYSFS),)
+SYSFS_PREFIX := $(BOARD_HAVE_FPC_SYSFS)
 endif
 LOCAL_CFLAGS += -DSYSFS_PREFIX=\"$(SYSFS_PREFIX)\"
 
