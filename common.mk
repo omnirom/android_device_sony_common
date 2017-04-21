@@ -242,6 +242,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio
 # Fluencetype can be "fluence" or "fluencepro" or "none"
+ifeq ($(TARGET_QCOM_AUDIO_VARIANT),)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence \
     persist.audio.fluence.voicecall=true \
@@ -250,6 +251,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.speaker=true \
     media.aac_51_output_enabled=true \
     audio.deep_buffer.media=1
+endif
 
 # Property to enable user to access Google WFD settings.
 PRODUCT_PROPERTY_OVERRIDES += \
