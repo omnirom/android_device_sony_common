@@ -13,7 +13,9 @@
 # limitations under the License.
 
 # Sony AOSP Project
+ifneq ($(strip $(BOARD_USES_QCOM_HARDWARE)),true)
 SONY_AOSP ?= true
+endif
 
 # Common path
 COMMON_PATH := device/sony/common
