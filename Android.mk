@@ -100,7 +100,9 @@ endif
 ifeq ($(TARGET_QCOM_AUDIO_VARIANT),)
 include $(call all-makefiles-under,$(audio-hal))
 endif
+ifneq ($(USE_DEVICE_SPECIFIC_GPS),true)
 include $(call all-makefiles-under,$(gps-hal))
+endif
 
 ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 ifneq ($(filter rhine,$(PRODUCT_PLATFORM)),)
