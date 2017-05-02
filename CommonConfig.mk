@@ -88,4 +88,6 @@ endif
 -include vendor/qcom/proprietary/common/build/proprietary-build.mk
 
 # SELinux
+ifneq ($(BOARD_USES_QCOM_HARDWARE),true)
 include device/sony/sepolicy/sepolicy.mk
+endif
