@@ -166,6 +166,10 @@ PRODUCT_PACKAGES += \
     ExtendedSettings
 endif
 
+# librqbalance
+PRODUCT_PACKAGES += \
+    librqbalance
+
 # APN list
 PRODUCT_COPY_FILES += \
     device/sample/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml \
