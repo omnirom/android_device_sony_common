@@ -13,9 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-ifneq ($(strip $(BOARD_USES_QCOM_HARDWARE)),true)
-
-ifeq ($(filter-out satsuki sumire suzuran dora kagura keyaki,$(TARGET_DEVICE)),)
+ifeq ($(filter-out satsuki sumire suzuran kugo suzu dora kagura keyaki,$(TARGET_DEVICE)),)
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -57,5 +55,3 @@ LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
 endif
-
-endif # BOARD_USES_QCOM_HARDWARE
