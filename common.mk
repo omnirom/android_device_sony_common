@@ -170,6 +170,10 @@ endif
 PRODUCT_PACKAGES += \
     librqbalance
 
+# librqbalance enablement
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=/system/lib/librqbalance.so
+
 # APN list
 PRODUCT_COPY_FILES += \
     device/sample/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml \
