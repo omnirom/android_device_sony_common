@@ -13,7 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-ifeq ($(filter-out satsuki sumire suzuran kugo suzu dora kagura keyaki,$(TARGET_DEVICE)),)
+
+ifeq ($(filter-out satsuki sumire suzuran suzu kugo dora kagura keyaki,$(TARGET_DEVICE)),)
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -38,10 +39,14 @@ LOCAL_SHARED_LIBRARIES := liblog \
 			  libdl \
 			  libutils
 
-SYSFS_PREFIX := "/sys/devices/soc.0/fpc1145_device/"
+SYSFS_PREFIX := "/sys/devices/soc.0/fpc1145_device"
+ifeq ($(TARGET_KERNEL_VERSION),3.18)
+SYSFS_PREFIX := "/sys/devices/soc/fpc1145_device"
+endif
 ifneq ($(BOARD_HAVE_FPC_SYSFS),)
 SYSFS_PREFIX := $(BOARD_HAVE_FPC_SYSFS)
 endif
+
 LOCAL_CFLAGS += -DSYSFS_PREFIX=\"$(SYSFS_PREFIX)\"
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)

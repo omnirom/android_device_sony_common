@@ -31,9 +31,9 @@
 #include <cutils/log.h>
 
 #define SPI_CLK_FILE  "/sys/bus/spi/devices/spi0.1/clk_enable"
-#define SPI_PREP_FILE SYSFS_PREFIX "spi_prepare"
-#define SPI_WAKE_FILE SYSFS_PREFIX "wakeup_enable"
-#define SPI_IRQ_FILE  SYSFS_PREFIX "irq"
+#define SPI_PREP_FILE SYSFS_PREFIX "/spi_prepare"
+#define SPI_WAKE_FILE SYSFS_PREFIX "/wakeup_enable"
+#define SPI_IRQ_FILE  SYSFS_PREFIX "/irq"
 
 static struct QSEECom_handle * mFPC_handle;
 static struct QSEECom_handle * mKeymasterHandle;

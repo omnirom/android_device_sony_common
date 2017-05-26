@@ -166,6 +166,10 @@ PRODUCT_PACKAGES += \
     ExtendedSettings
 endif
 
+# For android_filesystem_config.h
+#PRODUCT_PACKAGES += \
+#    fs_config_files
+
 # librqbalance
 PRODUCT_PACKAGES += \
     librqbalance
@@ -249,7 +253,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.debug.level=1
 
 # Audio
-ifeq ($(TARGET_QCOM_AUDIO_VARIANT),)
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicecomm=true \
@@ -257,7 +260,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.speaker=true \
     media.aac_51_output_enabled=true \
     audio.deep_buffer.media=1
-endif
 
 # Property to enable user to access Google WFD settings.
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -293,18 +295,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.dc.frame.sync=0 \
     persist.camera.dcrf.enable=0
 
-# Camera Features
+# Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.gyro.disable=1 \
-    persist.camera.stats.af.paaf=0 \
     persist.camera.feature.cac=0 \
     persist.camera.ois.disable=0 \
     persist.camera.zsl.mode=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=0 \
-    media.stagefright.less-secure=true \
-    media.stagefright.legacyencoder=true
 endif
 
 # Sensors debug

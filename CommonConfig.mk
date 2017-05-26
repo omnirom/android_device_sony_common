@@ -53,7 +53,6 @@ ifneq ($(USE_CAMERA_STUB),true)
 TARGET_USES_AOSP := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 BOARD_QTI_CAMERA_V2 := true
-TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 endif
 
 # GPS definitions for Qualcomm solution
@@ -75,8 +74,15 @@ BOARD_SECCOMP_POLICY += $(COMMON_PATH)/seccomp
 # Init configuration for init_sony
 include $(COMMON_PATH)/init/config.mk
 
-# Disable dex-preoptimization
-WITH_DEXPREOPT := false
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+DONT_DEXPREOPT_PREBUILTS := true
 
 BUILD_KERNEL := true
 ifeq ($(filter tone,$(PRODUCT_PLATFORM)),)
