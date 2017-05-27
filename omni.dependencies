@@ -1,12 +1,6 @@
 [
   {
     "remote":       "omnirom",
-    "repository":   "android_kernel_sony_msm",
-    "target_path":  "kernel/sony/msm",
-    "revision":     "android-7.1"
-  },
-  {
-    "remote":       "omnirom",
     "repository":   "android_device_sony_common-init",
     "target_path":  "device/sony/common-init",
     "revision":     "android-7.1"
