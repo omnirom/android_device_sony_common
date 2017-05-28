@@ -64,7 +64,7 @@ check_mount /lta-label /dev/block/bootdevice/by-name/LTALabel ext4;
 variant=$(\
     ls /lta-label/*.html | \
     sed s/.*-elabel-// | \
-    sed s/-row.html// | \
+    sed s/-.*.html// | \
     tr -d '\n\r' | \
     tr '[a-z]' '[A-Z]' \
 );
