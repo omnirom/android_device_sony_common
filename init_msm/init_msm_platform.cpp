@@ -78,7 +78,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     if (variantID >= 0) {
         if (variants[variantID].is_ds) {
             property_set("persist.radio.multisim.config", "dsds");
-            property_set("ro.telephony.default_network", "0,1");
+            property_set("ro.telephony.default_network", "9,1");
             property_set("ro.telephony.ril.config", "simactivation");
         } else if (variants[variantID].is_lte) {
             property_set("ro.telephony.default_network", "9");
