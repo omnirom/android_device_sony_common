@@ -7,12 +7,6 @@
   },
   {
     "remote":       "omnirom",
-    "repository":   "android_device_sony_common-init",
-    "target_path":  "device/sony/common-init",
-    "revision":     "android-8.0"
-  },
-  {
-    "remote":       "omnirom",
     "repository":   "android_device_sony_sepolicy",
     "target_path":  "device/sony/sepolicy",
     "revision":     "android-8.0"
