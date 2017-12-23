@@ -179,7 +179,7 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger_res_images
+    omni_charger_res_images
 
 # AOSP Packages
 PRODUCT_PACKAGES += \
@@ -234,9 +234,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/vendor/lib/librqbalance.so
 
 # APN list
-PRODUCT_COPY_FILES += \
-    device/sample/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml \
-    device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+#PRODUCT_COPY_FILES += \
+#    device/sample/etc/old-apns-conf.xml:system/etc/old-apns-conf.xml \
+#    device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
