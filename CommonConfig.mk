@@ -34,6 +34,13 @@ BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += coherent_pool=8M
 BOARD_KERNEL_CMDLINE += sched_enable_power_aware=1 user_debug=31
 
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
@@ -53,6 +60,9 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
+# Display
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
@@ -60,6 +70,7 @@ AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 BOARD_QTI_CAMERA_V2 := true
+CAMERA_DAEMON_NOT_PRESENT := true
 
 # GPS definitions for Qualcomm solution
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
@@ -82,7 +93,6 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
-DONT_DEXPREOPT_PREBUILTS := true
 
 BUILD_KERNEL := true
 -include device/sony/common-headers/KernelHeaders.mk
