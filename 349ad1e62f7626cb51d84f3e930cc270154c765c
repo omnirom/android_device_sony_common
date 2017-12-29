@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8834d11e_f479abf8",
+        "filename": "omni.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1001823
+      },
+      "writtenOn": "2017-12-29T00:13:50Z",
+      "side": 1,
+      "message": "COMMON_PATH does not seem to be defined at this point",
+      "range": {
+        "startLine": 28,
+        "startChar": 24,
+        "endLine": 28,
+        "endChar": 38
+      },
+      "revId": "349ad1e62f7626cb51d84f3e930cc270154c765c",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": false
+    }
+  ]
+}
