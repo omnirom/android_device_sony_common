@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Common path
+COMMON_PATH := device/sony/common
+
 # Sony AOSP Project
 SONY_AOSP ?= true
 
@@ -23,6 +26,9 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 BOARD_USE_ENFORCING_SELINUX := true
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
+
+# twrp
+$(call inherit-product, $(COMMON_PATH)/recovery/twrp.mk)
 
 # Omni config
 $(call inherit-product, vendor/omni/config/common.mk)
