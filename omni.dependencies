@@ -3,7 +3,7 @@
     "remote":       "omnirom",
     "repository":   "android_device_sony_common-headers",
     "target_path":  "device/sony/common-headers",
-    "revision":     "android-8.1"
+    "revision":     "android-8.0"
   },
   {
     "remote":       "omnirom",
@@ -21,7 +21,7 @@
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_camera",
     "target_path":  "hardware/sony/camera",
-    "revision":     "android-8.1"
+    "revision":     "android-8.0"
   },
   {
     "remote":       "omnirom",
@@ -63,7 +63,7 @@
     "remote":       "omnirom",
     "repository":   "android_kernel_sony_msm",
     "target_path":  "kernel/sony/msm",
-    "revision":     "android-8.1"
+    "revision":     "android-8.0"
   },
   {
     "remote":       "omnirom",
