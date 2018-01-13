@@ -16,6 +16,9 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 # timekeep
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
+# init
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+
 # features
 TW_USE_TOOLBOX := true
 TW_NO_EXFAT := true
@@ -42,4 +45,5 @@ TW_CRYPTO_KEY_LOC := "footer"
 
 # init
 PRODUCT_PACKAGES += \
-    twrp.fstab
+    twrp.fstab \
+    init.recovery.usb
