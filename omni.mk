@@ -18,6 +18,10 @@ COMMON_PATH := device/sony/common
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# CarrierConfig overlay
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/omni/overlay/CarrierConfig
+
 # Common kernel source
 TARGET_KERNEL_SOURCE := kernel/sony/msm
 TARGET_COMPILE_WITH_MSM_KERNEL := true
