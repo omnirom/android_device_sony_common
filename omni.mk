@@ -36,3 +36,6 @@ $(call inherit-product, $(COMMON_PATH)/recovery/twrp.mk)
 
 # Omni config
 $(call inherit-product, vendor/omni/config/common.mk)
+
+# Widevine DRM
+$(call inherit-product-if-exists, vendor/sony/widevine/widevine.mk)
