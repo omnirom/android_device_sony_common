@@ -49,4 +49,6 @@
     <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
+    <bool name="config_multiColorNotificationLed">true</bool>
+
 </resources>
