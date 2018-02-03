@@ -49,6 +49,9 @@
     <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
+    <!-- Does the battery LED support multiple colors. Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">true</bool>
+
     <bool name="config_multiColorNotificationLed">true</bool>
 
 </resources>
