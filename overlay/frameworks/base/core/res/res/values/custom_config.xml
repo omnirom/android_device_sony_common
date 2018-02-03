@@ -68,4 +68,7 @@
         config to 7. -->
     <integer name="config_deviceHardwareKeys">32</integer>
 
+    <!-- Bool for key backlight -->
+    <bool name="config_button_brightness_support">true</bool>
+
 </resources>
