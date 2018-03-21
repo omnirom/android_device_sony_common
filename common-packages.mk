@@ -22,7 +22,6 @@ PRODUCT_PACKAGES += \
 # For audio.primary
 PRODUCT_PACKAGES += \
     libtinyalsa \
-    libtinycompress \
     libaudioroute \
     tinymix
 
@@ -67,7 +66,6 @@ PRODUCT_PACKAGES += \
     p2p_supplicant.conf \
     hostapd \
     libwpa_client \
-    wificond \
     wpa_supplicant \
     wpa_supplicant.conf
 
