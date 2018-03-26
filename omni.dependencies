@@ -70,5 +70,11 @@
     "repository":   "android_packages_apps_ExtendedSettings",
     "target_path":  "packages/apps/ExtendedSettings",
     "revision":     "android-8.1"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_external_busybox",
+    "target_path":  "external/busybox",
+    "revision":     "android-8.1"
   }
 ]
