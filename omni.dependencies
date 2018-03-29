@@ -49,6 +49,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_release-keys",
+    "target_path":  "hardware/sony/release-keys",
+    "revision":     "android-8.1"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_thermanager",
     "target_path":  "hardware/sony/thermanager",
     "revision":     "android-8.1"
