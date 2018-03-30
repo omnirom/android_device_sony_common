@@ -16,7 +16,7 @@
 TARGET_VENDOR_VERSION := 11
 
 # Release key
-PRODUCT_DEFAULT_DEV_CERTIFICATE := hardware/sony/release-keys/releasekey
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/oss/release-keys/releasekey
 
 # Common path
 COMMON_PATH := device/sony/common
