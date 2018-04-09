@@ -34,6 +34,7 @@ TARGET_NO_SEPARATE_RECOVERY := true
 
 # crypto
 TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_USE_SYSTEM_VOLD := qseecomd
 TW_CRYPTO_FS_TYPE := "ext4"
 TW_CRYPTO_MNT_POINT := "/data"
 TW_CRYPTO_REAL_BLKDEV := "/dev/block/bootdevice/by-name/userdata"
@@ -44,4 +45,5 @@ TW_CRYPTO_KEY_LOC := "footer"
 # init
 PRODUCT_PACKAGES += \
     twrp.fstab \
-    init.recovery.usb
+    init.recovery.usb \
+    init.recovery.vold_decrypt.rc
