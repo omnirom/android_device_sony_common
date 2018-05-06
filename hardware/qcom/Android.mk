@@ -26,7 +26,7 @@ OMX_VIDEO_PATH := mm-video-v4l2
 media-hal := $(QCOM_MEDIA_ROOT)
 endif
 
-SRC_CAMERA_HAL_DIR ?= vendor/qcom/opensource/camera
+SRC_CAMERA_HAL_DIR ?= hardware/sony/camera
 SRC_DISPLAY_HAL_DIR := $(display-hal)
 SRC_MEDIA_HAL_DIR := $(QCOM_MEDIA_ROOT)
 TARGET_KERNEL_VERSION := $(SOMC_KERNEL_VERSION)
