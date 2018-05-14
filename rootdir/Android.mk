@@ -11,6 +11,28 @@ LOCAL_VENDOR_MODULE      := true
 include $(BUILD_PREBUILT)
 endif
 
+ifneq ($(TARGET_LEGACY_KEYMASTER), true)
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.gatekeeper@1.0-service-qti
+LOCAL_SRC_FILES := vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := android.hardware.gatekeeper@1.0-service-qti
+LOCAL_MODULE_SUFFIX := .rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.keymaster@3.0-service-qti
+LOCAL_SRC_FILES := vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := android.hardware.keymaster@3.0-service-qti
+LOCAL_MODULE_SUFFIX := .rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
+endif
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := init.qcom.devstart.sh
 LOCAL_MODULE_CLASS := EXECUTABLES
@@ -129,7 +151,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
 
-ifneq ($(filter msm8952,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8916 msm8952,$(TARGET_BOARD_PLATFORM)),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := qmuxd.rc
 LOCAL_MODULE_CLASS := ETC
