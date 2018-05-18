@@ -25,6 +25,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_cash",
+    "target_path":  "hardware/sony/cash",
+    "revision":     "android-8.1"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_dataservices",
     "target_path":  "hardware/sony/dataservices",
     "revision":     "android-8.1"
