@@ -120,10 +120,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ExtendedSettings
 
-# ODM version monitor
-PRODUCT_PACKAGES += \
-    odmcheck
-
 # Charger
 PRODUCT_PACKAGES += \
     omni_charger_res_images
