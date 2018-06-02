@@ -31,9 +31,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
 endif
 
-# Default to LTE/GSM/WCDMA.
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.default_network=9
+## Default to LTE/GSM/WCDMA.
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.telephony.default_network=9
 
 # System props for the data modules
 PRODUCT_PROPERTY_OVERRIDES += \

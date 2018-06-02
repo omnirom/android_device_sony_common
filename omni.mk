@@ -40,6 +40,16 @@ RED_LED_PATH := /sys/class/leds/led:rgb_red/brightness
 GREEN_LED_PATH := /sys/class/leds/led:rgb_green/brightness
 BLUE_LED_PATH := /sys/class/leds/led:rgb_blue/brightness
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_variant
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+
+# Variant linking script
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/releasetools/updater.sh:system/vendor/bin/updater.sh
+
 # twrp
 $(call inherit-product, $(COMMON_PATH)/recovery/twrp.mk)
 
