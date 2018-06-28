@@ -40,6 +40,8 @@ RED_LED_PATH := /sys/class/leds/led:rgb_red/brightness
 GREEN_LED_PATH := /sys/class/leds/led:rgb_green/brightness
 BLUE_LED_PATH := /sys/class/leds/led:rgb_blue/brightness
 
+TARGET_EXFAT_DRIVER := sdfat
+
 # twrp
 $(call inherit-product, $(COMMON_PATH)/recovery/twrp.mk)
 
