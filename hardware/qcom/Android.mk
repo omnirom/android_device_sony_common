@@ -15,18 +15,18 @@ display-hal := hardware/qcom/display/msm8998
 QCOM_MEDIA_ROOT := hardware/qcom/media/msm8998
 OMX_VIDEO_PATH := mm-video-v4l2
 media-hal := hardware/qcom/media/msm8998
-SRC_CAMERA_HAL_DIR := hardware/sony/camera
 endif
 
 ifeq ($(SOMC_KERNEL_VERSION),4.9)
 audio-hal := hardware/qcom/audio
 gps-hal := hardware/qcom/gps/sdm845
-display-hal := hardware/qcom/display/sdm845
+display-hal := hardware/qcom/display/sde
 QCOM_MEDIA_ROOT := hardware/qcom/media/sdm845
 OMX_VIDEO_PATH := mm-video-v4l2
 media-hal := hardware/qcom/media/sdm845
 endif
 
+SRC_CAMERA_HAL_DIR := hardware/sony/camera
 SRC_DISPLAY_HAL_DIR := $(display-hal)
 SRC_MEDIA_HAL_DIR := $(QCOM_MEDIA_ROOT)
 
