@@ -55,12 +55,6 @@
   },
   {
     "remote":       "omnirom",
-    "repository":   "android_hardware_sony_thermanager",
-    "target_path":  "hardware/sony/thermanager",
-    "revision":     "android-9.0"
-  },
-  {
-    "remote":       "omnirom",
     "repository":   "android_hardware_sony_timekeep",
     "target_path":  "hardware/sony/timekeep",
     "revision":     "android-9.0"
