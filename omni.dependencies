@@ -37,6 +37,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_display",
+    "target_path":  "hardware/sony/display",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_fingerprint",
     "target_path":  "hardware/sony/fingerprint",
     "revision":     "android-9.0"
