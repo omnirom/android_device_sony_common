@@ -3,78 +3,78 @@
     "remote":       "omnirom",
     "repository":   "android_device_sony_common-headers",
     "target_path":  "device/sony/common-headers",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_device_sony_sepolicy",
     "target_path":  "device/sony/sepolicy",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_qcom_gps",
     "target_path":  "hardware/qcom/gps",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_camera",
     "target_path":  "hardware/sony/camera",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_cash",
     "target_path":  "hardware/sony/cash",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_dataservices",
     "target_path":  "hardware/sony/dataservices",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_fingerprint",
     "target_path":  "hardware/sony/fingerprint",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_location",
     "target_path":  "hardware/sony/location",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_macaddrsetup",
     "target_path":  "hardware/sony/macaddrsetup",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_thermanager",
     "target_path":  "hardware/sony/thermanager",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_hardware_sony_timekeep",
     "target_path":  "hardware/sony/timekeep",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_kernel_sony_msm",
     "target_path":  "kernel/sony/msm",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   },
   {
     "remote":       "omnirom",
     "repository":   "android_packages_apps_ExtendedSettings",
     "target_path":  "packages/apps/ExtendedSettings",
-    "revision":     "android-8.1"
+    "revision":     "android-9.0"
   }
 ]
