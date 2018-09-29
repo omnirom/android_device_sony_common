@@ -106,6 +106,9 @@ on late-fs
     # Start devices by sysfs trigger
     start devstart_sh
 
+    # enable ril-daemon
+    enable ril-daemon
+
 on post-fs-data
     # We can start netd here before in is launched in common init.rc on zygote-start
     start netd
