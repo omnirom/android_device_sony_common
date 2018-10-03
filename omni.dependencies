@@ -37,8 +37,26 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_audio",
+    "target_path":  "hardware/sony/audio",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_display",
     "target_path":  "hardware/sony/display",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_hardware_sony_gps",
+    "target_path":  "hardware/sony/gps",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_hardware_sony_media",
+    "target_path":  "hardware/sony/media",
     "revision":     "android-9.0"
   },
   {
