@@ -42,6 +42,9 @@ BLUE_LED_PATH := /sys/class/leds/led:rgb_blue/brightness
 
 TARGET_EXFAT_DRIVER := sdfat
 
+# Command Line Tools
+BOARD_INCLUDE_CMDLINE_TOOLS := true
+
 # twrp
 $(call inherit-product, $(COMMON_PATH)/recovery/twrp.mk)
 
