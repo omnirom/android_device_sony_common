@@ -85,6 +85,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_transpower",
+    "target_path":  "hardware/sony/transpower",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_kernel_sony_msm",
     "target_path":  "kernel/sony/msm",
     "revision":     "android-9.0"
