@@ -97,6 +97,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_kernel_sony_msm-defconfig",
+    "target_path":  "kernel/sony/msm/arch/arm64/configs/sony",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_packages_apps_ExtendedSettings",
     "target_path":  "packages/apps/ExtendedSettings",
     "revision":     "android-9.0"
