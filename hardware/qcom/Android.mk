@@ -21,11 +21,7 @@ ifeq ($(SOMC_KERNEL_VERSION),4.9)
 audio-hal := hardware/sony/audio
 gps-hal := hardware/sony/gps/sdm845
 display-hal := hardware/sony/display
-ifneq ($(filter loire tone nile yoshino,$(SOMC_PLATFORM)),)
 QCOM_MEDIA_ROOT := hardware/sony/media/msm8998
-else
-QCOM_MEDIA_ROOT := hardware/sony/media/sdm845
-endif
 OMX_VIDEO_PATH := mm-video-v4l2
 media-hal := $(QCOM_MEDIA_ROOT)
 endif
