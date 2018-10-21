@@ -3,7 +3,11 @@ LOCAL_PATH := $(call my-dir)
 # TWRP fstab
 include $(CLEAR_VARS)
 LOCAL_MODULE := twrp.fstab
+ifeq ($(AB_OTA_UPDATER),true)
+LOCAL_SRC_FILES := twrp_ab.fstab
+else
 LOCAL_SRC_FILES := twrp.fstab
+endif
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_STEM := twrp.fstab
 LOCAL_MODULE_CLASS := ETC
