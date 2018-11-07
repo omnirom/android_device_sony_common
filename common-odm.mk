@@ -93,6 +93,8 @@ PRODUCT_PACKAGES += \
     libqmi_encdec \
     libqmiservices \
     libqmiservices_ext \
+    libqrtr \
+    libqsocket \
     qmuxd
 
 # Ril
