@@ -13,12 +13,6 @@
   },
   {
     "remote":       "omnirom",
-    "repository":   "android_hardware_qcom_gps",
-    "target_path":  "hardware/qcom/gps",
-    "revision":     "android-9.0"
-  },
-  {
-    "remote":       "omnirom",
     "repository":   "android_hardware_sony_camera",
     "target_path":  "hardware/sony/camera",
     "revision":     "android-9.0"
