@@ -11,8 +11,15 @@ MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660 sdm845
 
 audio-hal := hardware/sony/audio
 gps-hal := hardware/sony/gps/sdm845
+
+ifeq ($(TARGET_USES_SDE),true)
+display-hal := hardware/sony/display-sde
+QCOM_MEDIA_ROOT := hardware/sony/media/sdm845
+else
 display-hal := hardware/sony/display
 QCOM_MEDIA_ROOT := hardware/sony/media/msm8998
+endif
+
 OMX_VIDEO_PATH := mm-video-v4l2
 media-hal := $(QCOM_MEDIA_ROOT)
 
