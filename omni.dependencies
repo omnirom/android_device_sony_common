@@ -37,8 +37,20 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_bootctrl",
+    "target_path":  "hardware/sony/bootctrl",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_display",
     "target_path":  "hardware/sony/display",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_hardware_sony_display-sde",
+    "target_path":  "hardware/sony/display-sde",
     "revision":     "android-9.0"
   },
   {
