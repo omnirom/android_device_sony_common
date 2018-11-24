@@ -67,6 +67,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_sdm845_media",
+    "target_path":  "hardware/sony/media/sdm845",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_fingerprint",
     "target_path":  "hardware/sony/fingerprint",
     "revision":     "android-9.0"
@@ -85,6 +91,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_qcrilam",
+    "target_path":  "hardware/sony/qcrilam",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_timekeep",
     "target_path":  "hardware/sony/timekeep",
     "revision":     "android-9.0"
@@ -99,6 +111,24 @@
     "remote":       "omnirom",
     "repository":   "android_kernel_sony_msm",
     "target_path":  "kernel/sony/msm",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_kernel_sony_msm-wlan-fw-api",
+    "target_path":  "kernel/sony/msm/drivers/staging/wlan-qc/fw-api",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_kernel_sony_msm-wlan-qca-wifi-host-cmn",
+    "target_path":  "kernel/sony/msm/drivers/staging/wlan-qc/qca-wifi-host-cmn",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
+    "repository":   "android_kernel_sony_msm-wlan-qcacld-3.0",
+    "target_path":  "kernel/sony/msm/drivers/staging/wlan-qc/qcacld-3.0",
     "revision":     "android-9.0"
   },
   {
