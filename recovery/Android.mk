@@ -3,8 +3,8 @@ LOCAL_PATH := $(call my-dir)
 # TWRP fstab
 include $(CLEAR_VARS)
 LOCAL_MODULE := twrp.fstab
-ifeq ($(AB_OTA_UPDATER),true)
-LOCAL_SRC_FILES := twrp_ab.fstab
+ifneq ($(TW_FSTAB_SUFFIX),)
+LOCAL_SRC_FILES := twrp_$(TW_FSTAB_SUFFIX).fstab
 else
 LOCAL_SRC_FILES := twrp.fstab
 endif
