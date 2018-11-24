@@ -4,7 +4,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE := twrp.fstab
 ifeq ($(AB_OTA_UPDATER),true)
-LOCAL_SRC_FILES := twrp_ab.fstab
+LOCAL_SRC_FILES := twrp_ab_$(SOMC_PLATFORM).fstab
 else
 LOCAL_SRC_FILES := twrp.fstab
 endif
