@@ -14,9 +14,13 @@ gps-hal := hardware/sony/gps/sdm845
 
 ifeq ($(TARGET_USES_SDE),true)
 display-hal := hardware/sony/display-sde
-QCOM_MEDIA_ROOT := hardware/sony/media/sdm845
 else
 display-hal := hardware/sony/display
+endif
+
+ifeq ($(TARGET_BOARD_PLATFORM),sdm845)
+QCOM_MEDIA_ROOT := hardware/sony/media/sdm845
+else
 QCOM_MEDIA_ROOT := hardware/sony/media/msm8998
 endif
 
