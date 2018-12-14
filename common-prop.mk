@@ -127,35 +127,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port=I2C
 
-# Camera Debug
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.hal.debug=0 \
-    persist.camera.kpi.debug=0 \
-    persist.camera.global.debug=0
-
-# Disable Dual Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.dual.camera.mpo=0 \
-    persist.camera.dc.frame.sync=0 \
-    persist.camera.dcrf.enable=0
-
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.gyro.disable=1 \
-    persist.camera.feature.cac=0 \
-    persist.camera.ois.disable=0 \
-    persist.camera.eis.enable=0 \
-    persist.camera.zsl.mode=1 \
-    persist.camera.exif.rotation=off \
-    persist.camera.lib2d.rotation=on
-
-# Sensors debug
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.sensors.hal=0 \
-    debug.qualcomm.sns.daemon=0 \
-    debug.qualcomm.sns.hal=0 \
-    debug.qualcomm.sns.libsensor1=0
-
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/odm/lib64/libril-qc-qmi-1.so \
