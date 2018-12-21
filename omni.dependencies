@@ -13,6 +13,12 @@
   },
   {
     "remote":       "omnirom",
+    "repository":   "android_hardware_sony_bluetooth",
+    "target_path":  "hardware/sony/bluetooth",
+    "revision":     "android-9.0"
+  },
+  {
+    "remote":       "omnirom",
     "repository":   "android_hardware_sony_camera",
     "target_path":  "hardware/sony/camera",
     "revision":     "android-9.0"
