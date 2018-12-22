@@ -30,8 +30,7 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 BOARD_USE_ENFORCING_SELINUX := false
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
-BOARD_SEPOLICY_DIRS += \
-    vendor/omni/sepolicy
+include vendor/omni/sepolicy/sepolicy.mk
 
 # Healthd
 HEALTHD_FORCE_BACKLIGHT_CONTROL := true
