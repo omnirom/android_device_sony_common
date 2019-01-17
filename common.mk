@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
     init.qcom.devstart.sh \
     init.qcom.ipastart.sh
 
+# HACK: Utility to disable deep sleep
+PRODUCT_PACKAGES += \
+    neversleep.sh
+
 # Depend on symlink creation in /vendor:
 PRODUCT_PACKAGES += \
     adreno_symlinks \
