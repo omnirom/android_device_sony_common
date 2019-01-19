@@ -15,7 +15,7 @@
 $(call inherit-product-if-exists, device/sony/customization/customization.mk)
 
 # Vendor version
-TARGET_VENDOR_VERSION := v4
+TARGET_VENDOR_VERSION := v5
 
 # Common path
 COMMON_PATH := device/sony/common

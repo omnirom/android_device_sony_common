@@ -22,6 +22,7 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
 
+ifneq ($(TARGET_KEYMASTER_V4), true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := android.hardware.keymaster@3.0-service-qti
 LOCAL_SRC_FILES := vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
@@ -31,7 +32,19 @@ LOCAL_MODULE_SUFFIX := .rc
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
+else
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.keymaster@4.0-service-qti
+LOCAL_SRC_FILES := vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := android.hardware.keymaster@4.0-service-qti
+LOCAL_MODULE_SUFFIX := .rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
+include $(BUILD_PREBUILT)
 endif
+
+endif # $(TARGET_LEGACY_KEYMASTER) != true
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := init.qcom.devstart.sh
@@ -128,6 +141,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
 
+ifeq ($(TARGET_HAS_IMS), true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := imsservices.rc
 LOCAL_MODULE_CLASS := ETC
@@ -135,6 +149,7 @@ LOCAL_SRC_FILES := vendor/etc/init/imsservices.rc
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/init
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mlog_qmi.rc
