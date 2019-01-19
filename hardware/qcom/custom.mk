@@ -21,6 +21,8 @@ endif
 ifeq ($(TARGET_BOARD_PLATFORM),sdm845)
 QCOM_MEDIA_ROOT := hardware/sony/media/sdm845
 else
+# ipa-hal is already included by default for sdm845
+ipa-hal := hardware/qcom/sdm845/data/ipacfg-mgr
 QCOM_MEDIA_ROOT := hardware/sony/media/msm8998
 endif
 
@@ -38,4 +40,9 @@ include device/sony/common/hardware/qcom/utils.mk
 include $(call all-makefiles-under,$(audio-hal))
 include $(call all-makefiles-under,$(gps-hal))
 include $(call all-makefiles-under,$(media-hal))
+
+ifneq ($(ipa-hal),)
+include $(call first-makefiles-under,$(ipa-hal))
+endif
+
 endif
