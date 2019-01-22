@@ -1,0 +1,19 @@
+# HACK: Hold a phony wakelock to stop attempting to enter deep sleep
+# Set persist.vendor.neversleep to "false" to re-enable deep sleep
+
+on property:sys.boot_completed=1
+    start vendor.neversleep
+
+service vendor.neversleep /vendor/bin/neversleep.sh
+    user system
+    group system
+    disabled
+    oneshot
+
+on property:vendor.neversleep.trigger=true
+    # HACK: Hold wakelock so device never goes to sleep
+    write /sys/power/wake_lock "shawnofthedead"
+
+on property:vendor.neversleep.trigger=false
+    # Remove the wakelock
+    write /sys/power/wake_unlock "shawnofthedead"
