@@ -97,6 +97,11 @@ PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep \
 
+# OSS Power HAL
+PRODUCT_PACKAGES += \
+    librqbalance \
+    android.hardware.power@1.3-service.sony
+
 # OSS WIFI and BT MAC tool
 PRODUCT_PACKAGES += \
     macaddrsetup
@@ -137,6 +142,11 @@ PRODUCT_PACKAGES += \
     libion \
     libjson \
     libxml2 \
+
+# External exFat tools
+PRODUCT_PACKAGES += \
+    mkfs.exfat \
+    fsck.exfat
 
 # For config.fs
 PRODUCT_PACKAGES += \
