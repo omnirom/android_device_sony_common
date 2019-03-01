@@ -53,8 +53,6 @@ on init
     chown system system /sys/devices/mdss_dsi_panel/panel_id
     chmod 0440 /sys/devices/mdss_dsi_panel/panel_id
 
-    symlink /sdcard /storage/sdcard0
-
     # Setup zram options
     write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
@@ -89,6 +87,9 @@ on fs
 
     mount_all /vendor/etc/fstab.${ro.hardware}
 
+    # Start devices as soon as partitions are moounted
+    start devstart_sh
+
     restorecon_recursive /mnt/vendor/persist
 
 on post-fs
@@ -101,8 +102,6 @@ on late-fs
     # cause services for bootanim not running.
     wait_for_prop hwservicemanager.ready true
 
-    # Start devices by sysfs trigger
-    start devstart_sh
 
     # enable ril-daemon manually since it is disabled by default
     enable ril-daemon
@@ -143,11 +142,6 @@ on post-fs-data
     # Create directory for audio delta files
     mkdir /data/vendor/audio/acdbdata 0770 media audio
     mkdir /data/vendor/audio/acdbdata/delta 0770 media audio
-
-    # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
-    # We chown/chmod /persist again so because mount is run as root + defaults
-    chown system system /persist
-    chmod 0771 /persist
 
     mkdir /data/etc 0775
     mkdir /data/system 0775 system system
@@ -353,6 +347,7 @@ on boot
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.${ro.hardware}
+    write /proc/sys/vm/swappiness 100
 
 on property:vendor.sys.listeners.registered=true
     # load IPA FWs
