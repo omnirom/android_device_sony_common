@@ -18,6 +18,9 @@ COMMON_PATH := device/sony/common
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# Disable sepolicy split
+PRODUCT_SEPOLICY_SPLIT_OVERRIDE := false
+
 # CarrierConfig overlay
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/omni/overlay/CarrierConfig
