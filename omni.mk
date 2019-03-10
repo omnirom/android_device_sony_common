@@ -18,6 +18,9 @@ COMMON_PATH := device/sony/common
 # Sony AOSP Project
 SONY_AOSP ?= true
 
+# Disable treble
+PRODUCT_FULL_TREBLE_OVERRIDE := false
+
 # CarrierConfig overlay
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/omni/overlay/CarrierConfig
