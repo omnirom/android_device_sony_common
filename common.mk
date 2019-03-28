@@ -26,6 +26,9 @@ SONY_BUILD_SYMLINKS := $(COMMON_PATH)/sony_build_symlinks.mk
 
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # Codecs Configuration
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
