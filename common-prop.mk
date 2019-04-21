@@ -31,8 +31,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
 endif
 
-# Default to LTE/GSM/WCDMA.
-ifneq ($(PRODUCT_DEVICE_DS),true)
+# Common property setup DS or SS devices.
+ifeq ($(PRODUCT_DEVICE_DS),true)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.multisim.config=dsds
+else
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9
 endif
@@ -97,7 +100,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicecomm=true \
-    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.voicerec=true \
     persist.audio.fluence.speaker=true \
     media.aac_51_output_enabled=true \
     audio.deep_buffer.media=1 \
@@ -131,7 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/odm/lib64/libril-qc-qmi-1.so \
+    vendor.rild.libpath=/odm/lib64/libril-qc-qmi-1.so \
     ril.subscription.types=NV,RUIM
 
 # OpenGLES version

@@ -5,29 +5,18 @@ on post-fs-data
     # Fix sensors permissions
     chown system system /mnt/vendor/persist/sensors
 
-    # remove deprecated .reg
-    rm /mnt/vendor/persist/sensors/sns.reg
-
     # /dev/sensors only supports an ioctl to get the current SLPI timestamp;
     # allow the sensors daemon to perform this as non-root
     chown root system /dev/sensors
     chmod 660 /dev/sensors
 
 # Sensor service
-service sensors /odm/bin/sensors.qcom
-    class late_start
+service vendor.sensors /odm/bin/sensors.qcom
+    class core
     user system
     group system
     disabled
 
-# Start the service for unecrypted devices
-on property:ro.crypto.state=unencrypted
-    enable sensors
-
-# Enable the service for FBE devices
-on property:ro.crypto.type=file
-    enable sensors
-
-# Start the service for FDE devices
-on property:vold.decrypt=trigger_post_fs_data
-    start sensors
+# Enable the service after adsp is up
+on property:vendor.qcom.adspup=1
+    enable vendor.sensors
