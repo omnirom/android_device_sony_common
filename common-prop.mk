@@ -108,8 +108,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=7 \
     ro.config.media_vol_steps=25
 
+# Enable stats logging in LMKD
+TARGET_LMKD_STATS_LOG := true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.log_stats=true
+
 # Set lmkd options
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.low=1001 \
     ro.lmk.medium=800 \
     ro.lmk.critical=0 \
